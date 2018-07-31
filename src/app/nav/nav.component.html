@@ -1,0 +1,13 @@
+<nav>
+  <div>Houzzer</div>
+  <div>
+    <ul>
+      <li><a href="#">Houses</a></li>
+      <li><a href="#">Register</a></li>
+      <li *ngIf="!loggedIn()"><a href="#">Login</a></li>
+      <li *ngIf="loggedIn()" (click)="logout()" >Logout</li>
+      <li *ngIf="loggedIn()">Welcome User</li>
+    </ul>
+  </div>
+</nav>
+

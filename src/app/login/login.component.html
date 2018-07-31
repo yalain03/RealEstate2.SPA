@@ -1,0 +1,10 @@
+<form *ngIf="!loggedIn()" #loginForm="ngForm" (ngSubmit)="login()" >
+    <div> 
+        <input type="text" name="username" required placeholder="username" [(ngModel)]="model.username" >
+    </div>
+    <div>
+        <input type="password" name="password" required placeholder="password" [(ngModel)]="model.password" >
+    </div>
+        
+    <input [disabled]="!loginForm.valid" type="submit" value="Login">
+</form>

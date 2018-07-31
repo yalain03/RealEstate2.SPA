@@ -1,0 +1,40 @@
+<form #registerForm="ngForm" (ngSubmit)="register()" >
+  <div>
+    <label for="firstName">First Name: </label>
+    <input type="text" required name="firstName" id="firstName" [(ngModel)]="model.firstName" >
+  </div>
+  <div>
+    <label for="lastName">Last Name: </label>
+    <input type="text" required name="lastName" id="lastName" [(ngModel)]="model.lastName" >
+  </div>
+  <div>
+    <label for="username">Username: </label>
+    <input type="text" required name="username" id="username" [(ngModel)]="model.username" >
+  </div>
+  <div>
+      <label for="password">Password: </label>
+      <input type="password" required name="password" id="password" [(ngModel)]="model.password" >
+    </div>
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" required name="email" id="email" [(ngModel)]="model.email" >
+  </div>
+  <div>
+    <label for="phone">Phone: </label>
+    <input type="text" required placeholder="(xxx) xxx-xxxx" name="phone" id="phone" [(ngModel)]="model.phone" >
+  </div>  
+  <div>
+    <label for="dateOfBirth">Date of Birth: </label>
+    <input type="date" required name="dateOfBirth" id="dateOfBirth" [(ngModel)]="model.dateOfBirth" >
+  </div>
+  <div>
+    <label for="gender">Gender: </label>
+    <select required name="gender" id="gender" [(ngModel)]="model.gender" >
+      <option value="male">male</option>
+      <option value="female">female</option>
+    </select>
+  </div>
+
+  <input type="submit" value="Register" />
+
+</form>

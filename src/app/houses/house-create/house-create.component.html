@@ -1,3 +1,30 @@
-<p>
-  house-create works!
-</p>
+<div>
+  <div>
+    <input type="text" name="price" [(ngModel)]="model.price" >
+  </div>
+
+  <div>
+    <input type="text" name="rooms" [(ngModel)]="model.rooms" >
+  </div>
+
+  <div>
+    <input type="text" name="area" [(ngModel)]="model.area" >
+  </div>
+
+  <div>
+    <input type="text" name="street" [(ngModel)]="model.street" >
+  </div>
+
+  <div>
+    <input type="text" name="city" [(ngModel)]="model.city" >
+  </div>
+
+  <div>
+    <input type="state" name="price" [(ngModel)]="model.state" >
+  </div>
+
+  <div>
+    <input type="radio" name="price" [(ngModel)]="model.price" (click)="setAvailable()" > Available
+    <input type="radio" name="price" [(ngModel)]="model.price" (click)="setNotAvailable()" > Not Available
+  </div>
+</div>

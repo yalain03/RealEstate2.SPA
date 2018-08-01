@@ -1,3 +1,5 @@
-<p>
-  house-list works!
-</p>
+<div *ngFor="let house of houses" >
+  <p>{{ house.price }}</p>
+  <p>{{ house.area }}</p>
+  <p>{{ house.rooms }}</p>
+</div>

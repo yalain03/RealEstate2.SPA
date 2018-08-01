@@ -6,14 +6,22 @@ import { HouseCreateComponent } from './houses/house-create/house-create.compone
 import { HouseEditComponent } from './houses/house-edit/house-edit.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 export const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'houses', component: HouseListComponent },
-    { path: 'house/detail', component: HouseDetailComponent },
-    { path: 'house/create', component: HouseCreateComponent },
-    { path: 'house/edit', component: HouseEditComponent },
-    { path: '**', redirectTo: 'home', pathMatch: 'full' }
+    { path: 'house/detail/:id', component: HouseDetailComponent },
+    {
+        path: '',
+        runGuardsAndResolvers: 'always',
+        canActivate: [AuthGuard],
+        children: [
+            { path: 'house/create', component: HouseCreateComponent },
+            { path: 'house/edit/{id}', component: HouseEditComponent }
+        ]
+    },
+    { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

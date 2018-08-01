@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./house-create.component.css']
 })
 export class HouseCreateComponent implements OnInit {
+  model: any = {};
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setAvailable() {
+    this.model.sold = true;
+  }
+
+  setNotAvailable() {
+    this.model.sold = false;
   }
 
 }

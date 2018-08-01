@@ -3,10 +3,10 @@
   <div>
     <ul>
       <li><a [routerLink]="['/houses']" routerLinkActive="router-link-active" >Houses</a></li>
-      <li><a [routerLink]="['/register']" routerLinkActive="router-link-active" >Register</a></li>
+      <li *ngIf="!loggedIn()" ><a [routerLink]="['/register']" routerLinkActive="router-link-active" >Register</a></li>
       <li *ngIf="!loggedIn()"><a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a></li>
       <li *ngIf="loggedIn()" (click)="logout()" >Logout</li>
-      <li *ngIf="loggedIn()">Welcome User</li>
+      <li *ngIf="loggedIn()">Welcome {{ authService.decodedToken?.unique_name | titlecase }}</li>
     </ul>
   </div>
 </nav>

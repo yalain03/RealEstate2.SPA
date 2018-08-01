@@ -10,7 +10,7 @@ import { Router } from '../../../node_modules/@angular/router';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,14 +24,11 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn() {
-    const token = localStorage.getItem('token');
-    return !!token;
+    return this.authService.loggedIn();
   }
 
   logout() {
-    localStorage.removeItem('token');
-    console.log('Logged out successfully');
-    this.router.navigate(['/home']);
+    this.authService.logout();
   }
 
 }

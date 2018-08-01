@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './_guards/auth.guard';
 
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
@@ -18,6 +20,11 @@ import { HouseListComponent } from './houses/house-list/house-list.component';
 import { HouseDetailComponent } from './houses/house-detail/house-detail.component';
 import { HouseEditComponent } from './houses/house-edit/house-edit.component';
 import { HouseCreateComponent } from './houses/house-create/house-create.component';
+import { UserService } from './_services/user.service';
+
+export function tokenGetter() {
+    return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -36,11 +43,24 @@ import { HouseCreateComponent } from './houses/house-create/house-create.compone
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+          config: {
+              tokenGetter: tokenGetter,
+              whitelistedDomains: ['localhost:5000'],
+              blacklistedRoutes: [
+                'localhost:5000/api/register', 'localhost:5000/api/login',
+                'localhost:5000/api/houses', 'localhost:5000/api/register',
+                'localhost:5000/api/houses/:id'
+            ]
+          }
+      })
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      AuthGuard,
+      UserService
    ],
    bootstrap: [
       AppComponent

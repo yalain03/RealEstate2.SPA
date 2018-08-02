@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { PaginationModule } from 'ngx-bootstrap';
 import { AuthGuard } from './_guards/auth.guard';
 
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
@@ -23,6 +24,7 @@ import { HouseCreateComponent } from './houses/house-create/house-create.compone
 import { UserService } from './_services/user.service';
 import { HouseDetailResolver } from './_resolvers/house-detail.resolver';
 import { HouseListResolver } from './_resolvers/house-list.resolver';
+import { HousePhotoComponent } from './houses/house-photo/house-photo.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -39,7 +41,8 @@ export function tokenGetter() {
       HouseListComponent,
       HouseDetailComponent,
       HouseCreateComponent,
-      HouseEditComponent
+      HouseEditComponent,
+      HousePhotoComponent
    ],
    imports: [
       BrowserModule,
@@ -56,7 +59,8 @@ export function tokenGetter() {
                 'localhost:5000/api/houses/:id'
             ]
           }
-      })
+      }),
+      PaginationModule.forRoot()
    ],
    providers: [
       AuthService,

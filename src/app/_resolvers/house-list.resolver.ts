@@ -7,10 +7,13 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class HouseListResolver implements Resolve<House[]> {
+    pageNumber = 1;
+    pageSize = 6;
+
     constructor(private userService: UserService, private router: Router) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<House[]> {
-        return this.userService.getHouses().pipe(
+        return this.userService.getHouses(this.pageNumber, this.pageSize).pipe(
             catchError(error => {
                 console.log(error);
                 this.router.navigate(['/home']);

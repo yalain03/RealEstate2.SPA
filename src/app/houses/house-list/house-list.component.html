@@ -2,4 +2,12 @@
   <p>{{ house.price }}</p>
   <p>{{ house.area }}</p>
   <p>{{ house.rooms }}</p>
+  <a [routerLink]="['/house/detail/', house.id]" routerLinkActive="router-link-active" >View House</a>
 </div>
+
+<pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems"
+            [itemsPerPage]="pagination.itemsPerPage"
+            [(ngModel)]="pagination.currentPage"
+            (pageChanged)="pageChanged($event)"
+            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+ </pagination>

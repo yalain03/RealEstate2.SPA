@@ -22,8 +22,8 @@ export class HouseCreateComponent implements OnInit {
     this.model.sold = false;
   }
 
-  createHouse() {
-    this.userService.createHouse(this.model);
-  }
+  // createHouse() {
+  //   this.userService.createHouse(this.model);
+  // }
 
 }

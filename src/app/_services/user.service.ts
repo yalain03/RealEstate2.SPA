@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { House } from '../_models/house';
@@ -53,8 +53,8 @@ getHouse(id): Observable<House> {
   return this.http.get<House>(this.baseUrl + 'houses/' + id);
 }
 
-createHouse(model) {
-  return this.http.post(this.baseUrl + 'house/create', model);
+createHouse(id: number, model) {
+  return this.http.post(this.baseUrl + 'houses/users/' + id, model);
 }
 
 }

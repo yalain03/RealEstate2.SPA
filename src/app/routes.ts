@@ -23,8 +23,8 @@ export const appRoutes: Routes = [
         canActivate: [AuthGuard],
         children: [
             { path: 'house/create', component: HouseCreateComponent },
-            { path: 'house/edit/{id}', component: HouseEditComponent },
-            { path: 'house/photo/{id}', component: HousePhotoComponent }
+            { path: 'house/edit/:id', component: HouseEditComponent },
+            { path: 'house/photo/:id', component: HousePhotoComponent }
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' }

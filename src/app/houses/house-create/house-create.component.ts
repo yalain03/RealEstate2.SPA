@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_services/user.service';
+import { AuthService } from '../../_services/auth.service';
+import { Router } from '@angular/router';
+import { House } from '../../_models/house';
 
 @Component({
   selector: 'app-house-create',
@@ -9,7 +12,8 @@ import { UserService } from '../../_services/user.service';
 export class HouseCreateComponent implements OnInit {
   model: any = {};
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -22,8 +26,13 @@ export class HouseCreateComponent implements OnInit {
     this.model.sold = false;
   }
 
-  // createHouse() {
-  //   this.userService.createHouse(this.model);
-  // }
+  createHouse() {
+    this.model.userId = this.authService.decodedToken.nameid;
+    this.userService.createHouse(this.authService.decodedToken.nameid, this.model).subscribe((house: House) => {
+      this.router.navigate(['/house/photo/', house.id]);
+    }, error => {
+      console.log(error);
+    });
+  }
 
 }

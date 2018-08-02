@@ -14,14 +14,8 @@ export class HouseDetailComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadHouse();
-  }
-
-  loadHouse() {
-    this.userService.getHouse(+this.route.snapshot.params['id']).subscribe((house: House) => {
-      this.house = house;
-    }, error => {
-      console.log(error);
+    this.route.data.subscribe(data => {
+      this.house = data['house'];
     });
   }
 

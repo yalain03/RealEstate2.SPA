@@ -1,30 +1,37 @@
-<div>
+<form #houseForm="ngForm" >
   <div>
-    <input type="text" name="price" [(ngModel)]="model.price" >
+    <label for="price">Price: </label>
+    <input type="text" name="price" id="price" [(ngModel)]="model.price" >
   </div>
 
   <div>
-    <input type="text" name="rooms" [(ngModel)]="model.rooms" >
+      <label for="rooms">Rooms: </label>
+    <input type="text" name="rooms" id="rooms" [(ngModel)]="model.rooms" >
   </div>
 
   <div>
-    <input type="text" name="area" [(ngModel)]="model.area" >
+    <label for="area">Area: </label>
+    <input type="text" name="area" id="area" [(ngModel)]="model.area" >
   </div>
 
   <div>
-    <input type="text" name="street" [(ngModel)]="model.street" >
+    <label for="street">Street: </label>
+    <input type="text" name="street" id="street" [(ngModel)]="model.street" >
   </div>
 
   <div>
-    <input type="text" name="city" [(ngModel)]="model.city" >
+    <label for="city">City: </label>
+    <input type="text" name="city" id="city" [(ngModel)]="model.city" >
   </div>
 
   <div>
-    <input type="state" name="price" [(ngModel)]="model.state" >
+      <label for="state">State: </label>
+    <input type="state" name="state" id="state" [(ngModel)]="model.state" >
   </div>
 
   <div>
     <input type="radio" name="price" [(ngModel)]="model.price" (click)="setAvailable()" > Available
     <input type="radio" name="price" [(ngModel)]="model.price" (click)="setNotAvailable()" > Not Available
   </div>
-</div>
+  <input type="submit" value="Create" >
+</form>

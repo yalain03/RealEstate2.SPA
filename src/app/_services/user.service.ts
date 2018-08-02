@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
@@ -20,5 +20,9 @@ getHouses(): Observable<House[]> {
 getHouse(id): Observable<House> {
   return this.http.get<House>(this.baseUrl + 'houses/' + id);
 }
+
+// createHouse(model) {
+
+// }
 
 }

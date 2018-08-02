@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../_services/user.service';
 
 @Component({
   selector: 'app-house-create',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HouseCreateComponent implements OnInit {
   model: any = {};
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -19,6 +20,10 @@ export class HouseCreateComponent implements OnInit {
 
   setNotAvailable() {
     this.model.sold = false;
+  }
+
+  createHouse() {
+    this.userService.createHouse(this.model);
   }
 
 }

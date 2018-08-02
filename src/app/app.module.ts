@@ -21,6 +21,8 @@ import { HouseDetailComponent } from './houses/house-detail/house-detail.compone
 import { HouseEditComponent } from './houses/house-edit/house-edit.component';
 import { HouseCreateComponent } from './houses/house-create/house-create.component';
 import { UserService } from './_services/user.service';
+import { HouseDetailResolver } from './_resolvers/house-detail.resolver';
+import { HouseListResolver } from './_resolvers/house-list.resolver';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -60,7 +62,9 @@ export function tokenGetter() {
       AuthService,
       ErrorInterceptorProvider,
       AuthGuard,
-      UserService
+      UserService,
+      HouseDetailResolver,
+      HouseListResolver
    ],
    bootstrap: [
       AppComponent

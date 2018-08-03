@@ -23,7 +23,7 @@ export const appRoutes: Routes = [
         canActivate: [AuthGuard],
         children: [
             { path: 'house/create', component: HouseCreateComponent },
-            { path: 'house/edit/:id', component: HouseEditComponent },
+            { path: 'house/edit/:id', component: HouseEditComponent, resolve: {house: HouseDetailResolver} },
             { path: 'house/photo/:id', component: HousePhotoComponent }
         ]
     },

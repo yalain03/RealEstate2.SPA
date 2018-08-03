@@ -4,6 +4,7 @@ import { Resolve, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { UserService } from '../_services/user.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AuthService } from '../_services/auth.service';
 
 @Injectable()
 export class HouseListResolver implements Resolve<House[]> {

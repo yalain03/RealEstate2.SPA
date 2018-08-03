@@ -1,3 +1,38 @@
-<p>
-  house-edit works!
-</p>
+<form #houseForm="ngForm" >
+  <div>
+    <label for="price">Price: </label>
+    <input type="text" name="price" id="price" [(ngModel)]="house.price" >
+  </div>
+
+  <div>
+      <label for="rooms">Rooms: </label>
+    <input type="text" name="rooms" id="rooms" [(ngModel)]="house.rooms" >
+  </div>
+
+  <div>
+    <label for="area">Area: </label>
+    <input type="text" name="area" id="area" [(ngModel)]="house.area" >
+  </div>
+
+  <div>
+    <label for="street">Street: </label>
+    <input type="text" name="street" id="street" [(ngModel)]="house.street" >
+  </div>
+
+  <div>
+    <label for="city">City: </label>
+    <input type="text" name="city" id="city" [(ngModel)]="house.city" >
+  </div>
+
+  <div>
+      <label for="state">State: </label>
+    <input type="state" name="state" id="state" [(ngModel)]="house.state" >
+  </div>
+
+  <div>
+    <input type="radio" name="price" (click)="setAvailable()" > Available
+    <input type="radio" name="price" (click)="setNotAvailable()" > Not Available
+  </div>
+  <input type="submit" value="Create" >
+</form>
+

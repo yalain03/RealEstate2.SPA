@@ -47,6 +47,20 @@ export class HousePhotoComponent implements OnInit {
     });
 
     this.uploader.onAfterAddingFile = (file) => {file.withCredentials = false; };
+
+    this.uploader.onSuccessItem = (item, response, status, headers) => {
+      this.router.navigate(['/home']);
+    //   if(response) {
+    //     const res: Photo = JSON.parse(response);
+    //     const photo = {
+    //       id: res. id,
+    //       url: res.url,
+    //       isMain: res.isMain,
+    //       publicId: res.publicId
+    //     };
+
+    //   }
+    }
   }
 
 }

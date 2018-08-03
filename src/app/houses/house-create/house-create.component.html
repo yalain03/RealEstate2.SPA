@@ -30,8 +30,8 @@
   </div>
 
   <div>
-    <input type="radio" name="price" [(ngModel)]="model.price" (click)="setAvailable()" > Available
-    <input type="radio" name="price" [(ngModel)]="model.price" (click)="setNotAvailable()" > Not Available
+    <input type="radio" name="price" (click)="setAvailable()" > Available
+    <input type="radio" name="price" (click)="setNotAvailable()" > Not Available
   </div>
   <input type="submit" value="Create" >
 </form>

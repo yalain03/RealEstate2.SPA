@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { House } from '../_models/house';
 import { PaginatedResult } from '../_models/pagination';
 import { map } from 'rxjs/operators';
+import { User } from '../_models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -37,20 +38,6 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
     params = params.append('area', area);
   }
 
-  // if(this.authService.decodedToken) {
-  //   const userId = this.authService.decodedToken.nameid;
-  //   return this.http.get<House[]>(this.baseUrl + 'houses/users/' + userId, { observe: 'response', params })
-  //   .pipe(
-  //     map(response => {
-  //       paginatedResult.result = response.body;
-  //       if(response.headers.get('Pagination') != null) {
-  //         paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
-  //       }
-  //       return paginatedResult;
-  //     })
-  //   );
-  // }
-
   return this.http.get<House[]>(this.baseUrl + 'houses', { observe: 'response', params })
     .pipe(
       map(response => {
@@ -72,10 +59,18 @@ createHouse(id: number, model: House) {
 }
 
 updateHouse(model: House) {
-  return this.http.put(this.baseUrl + 'houses/update/' + model.id, model);
+  return this.http.put(this.baseUrl + 'houses/' + model.id, model);
 }
 
 deleteHouse(id: number, userId: number) {
   return this.http.delete(this.baseUrl + 'houses/users/' + userId + '/delete/' + id);
+}
+
+getUser(id: number) {
+  return this.http.get<User>(this.baseUrl + 'users/' + id);
+}
+
+updateUser(model: User) {
+  return this.http.put(this.baseUrl + 'users/' + model.id, model);
 }
 }

@@ -26,6 +26,8 @@ import { UserService } from './_services/user.service';
 import { HouseDetailResolver } from './_resolvers/house-detail.resolver';
 import { HouseListResolver } from './_resolvers/house-list.resolver';
 import { HousePhotoComponent } from './houses/house-photo/house-photo.component';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -43,7 +45,8 @@ export function tokenGetter() {
       HouseDetailComponent,
       HouseCreateComponent,
       HouseEditComponent,
-      HousePhotoComponent
+      HousePhotoComponent,
+      UserEditComponent
    ],
    imports: [
       BrowserModule,
@@ -70,7 +73,8 @@ export function tokenGetter() {
       AuthGuard,
       UserService,
       HouseDetailResolver,
-      HouseListResolver
+      HouseListResolver,
+      UserDetailResolver
    ],
    bootstrap: [
       AppComponent

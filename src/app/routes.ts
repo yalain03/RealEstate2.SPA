@@ -10,6 +10,8 @@ import { AuthGuard } from './_guards/auth.guard';
 import { HouseDetailResolver } from './_resolvers/house-detail.resolver';
 import { HouseListResolver } from './_resolvers/house-list.resolver';
 import { HousePhotoComponent } from './houses/house-photo/house-photo.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -24,7 +26,8 @@ export const appRoutes: Routes = [
         children: [
             { path: 'house/create', component: HouseCreateComponent },
             { path: 'house/edit/:id', component: HouseEditComponent, resolve: {house: HouseDetailResolver} },
-            { path: 'house/photo/:id', component: HousePhotoComponent }
+            { path: 'house/photo/:id', component: HousePhotoComponent },
+            { path: 'users/:id/edit', component: UserEditComponent, resolve: {user: UserDetailResolver}},
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' }

@@ -10,6 +10,7 @@ export interface House {
     city: string;
     state: string;
     user: User;
+    userId: number;
     photos: Photo[];
     sold: boolean;
 }

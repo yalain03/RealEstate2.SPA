@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { House } from '../../_models/house';
 import { UserService } from '../../_services/user.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AuthService } from '../../_services/auth.service';
 
 @Component({
   selector: 'app-house-edit',
@@ -11,7 +12,8 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class HouseEditComponent implements OnInit {
   house: House;
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private userService: UserService,
+    private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -20,14 +22,15 @@ export class HouseEditComponent implements OnInit {
   }
 
   setAvailable() {
-    this.house.sold = true;
-  }
-
-  setNotAvailable() {
     this.house.sold = false;
   }
 
-  updateHouse(house: House) {
+  setNotAvailable() {
+    this.house.sold = true;
+  }
+
+  updateHouse() {
+    this.house.userId = this.authService.decodedToken.nameid;
     this.userService.updateHouse(this.house).subscribe((response: Response) => {
       this.router.navigate(['/house/photo/', this.house.id]);
     }, error => {

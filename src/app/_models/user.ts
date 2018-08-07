@@ -9,4 +9,5 @@ export interface User {
     phone: string;
     gender: string;
     photo: Photo;
+    dateOfBirth: Date;
 }

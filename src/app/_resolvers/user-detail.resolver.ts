@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import { House } from '../_models/house';
 import { Resolve, Router, ActivatedRouteSnapshot } from '@angular/router';
+import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
-export class HouseListResolver implements Resolve<House[]> {
-    pageNumber = 1;
-    pageSize = 6;
-
+export class UserDetailResolver implements Resolve<User> {
     constructor(private userService: UserService, private router: Router) {}
 
-    resolve(route: ActivatedRouteSnapshot): Observable<House[]> {
-        return this.userService.getHouses(this.pageNumber, this.pageSize).pipe(
+    resolve(route: ActivatedRouteSnapshot): Observable<User> {
+        return this.userService.getUser(route.params['id']).pipe(
             catchError(error => {
                 console.log(error);
                 this.router.navigate(['/home']);

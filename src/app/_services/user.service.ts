@@ -37,20 +37,19 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
     params = params.append('area', area);
   }
 
-  const userId = this.authService.decodedToken.nameid;
-
-  if(userId != null) {
-    return this.http.get<House[]>(this.baseUrl + 'houses/users/' + userId, { observe: 'response', params })
-    .pipe(
-      map(response => {
-        paginatedResult.result = response.body;
-        if(response.headers.get('Pagination') != null) {
-          paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
-        }
-        return paginatedResult;
-      })
-    );
-  }
+  // if(this.authService.decodedToken) {
+  //   const userId = this.authService.decodedToken.nameid;
+  //   return this.http.get<House[]>(this.baseUrl + 'houses/users/' + userId, { observe: 'response', params })
+  //   .pipe(
+  //     map(response => {
+  //       paginatedResult.result = response.body;
+  //       if(response.headers.get('Pagination') != null) {
+  //         paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
+  //       }
+  //       return paginatedResult;
+  //     })
+  //   );
+  // }
 
   return this.http.get<House[]>(this.baseUrl + 'houses', { observe: 'response', params })
     .pipe(
@@ -68,8 +67,8 @@ getHouse(id): Observable<House> {
   return this.http.get<House>(this.baseUrl + 'houses/' + id);
 }
 
-createHouse(id: number, model) {
-  return this.http.post(this.baseUrl + 'houses/users/' + id, model);
+createHouse(id: number, model: House) {
+  return this.http.post(this.baseUrl + 'houses/user/' + id, model);
 }
 
 updateHouse(model: House) {

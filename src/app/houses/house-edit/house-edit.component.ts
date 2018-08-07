@@ -11,7 +11,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class HouseEditComponent implements OnInit {
   house: House;
 
-  constructor(private route: Route, private userService: UserService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {

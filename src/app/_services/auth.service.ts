@@ -22,7 +22,6 @@ login(model: any) {
         const user = response;
         if (user) {
           localStorage.setItem('token', user.token);
-          this.decodedToken = this.jwtHelper.decodeToken(user.token);
         }
       })
     );
@@ -39,7 +38,6 @@ loggedIn() {
 
 logout() {
   localStorage.removeItem('token');
-  console.log('Logged out successfully');
   this.router.navigate(['/home']);
 }
 

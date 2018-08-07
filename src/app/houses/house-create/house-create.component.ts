@@ -19,11 +19,11 @@ export class HouseCreateComponent implements OnInit {
   }
 
   setAvailable() {
-    this.model.sold = true;
+    this.model.sold = false;
   }
 
   setNotAvailable() {
-    this.model.sold = false;
+    this.model.sold = true;
   }
 
   createHouse() {

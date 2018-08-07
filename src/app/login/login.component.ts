@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.model).subscribe(next => {
-      console.log('Logged in successfully');
     }, error => {
       console.log(error);
     }, () => {

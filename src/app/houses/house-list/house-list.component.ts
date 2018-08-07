@@ -38,11 +38,11 @@ export class HouseListComponent implements OnInit {
   loadHouses() {
     this.userService.getHouses(this.pagination.currentPage, this.pagination.itemsPerPage, this.houseParams)
       .subscribe((res: PaginatedResult<House[]>) => {
-      this.houses = res.result;
-      this.pagination = res.pagination;
-    }, error => {
-      console.log(error);
-    })
+        this.houses = res.result;
+        this.pagination = res.pagination;
+      }, error => {
+        console.log(error);
+      });
   }
 
 }

@@ -14,7 +14,7 @@ export class HouseListResolver implements Resolve<House[]> {
     constructor(private userService: UserService, private router: Router, private authService: AuthService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<House[]> {
-        // if(!this.authService.loggedIn()) {
+        if(!this.authService.loggedIn()) {
             return this.userService.getHouses(this.pageNumber, this.pageSize).pipe(
                 catchError(error => {
                     console.log(error);
@@ -22,15 +22,15 @@ export class HouseListResolver implements Resolve<House[]> {
                     return of(null);
                 })
             );
-        // } else {
-        //     const id = this.authService.decodedToken.nameid;
-        //     return this.userService.getHousesForUser(id, this.pageNumber, this.pageSize).pipe(
-        //         catchError(error => {
-        //             console.log(error);
-        //             this.router.navigate(['/home']);
-        //             return of(null);
-        //         })
-        //     );
-        // }
+        } else {
+            const id = this.authService.decodedToken.nameid;
+            return this.userService.getHousesForUser(id, this.pageNumber, this.pageSize).pipe(
+                catchError(error => {
+                    console.log(error);
+                    this.router.navigate(['/home']);
+                    return of(null);
+                })
+            );
+        }
     }
 }

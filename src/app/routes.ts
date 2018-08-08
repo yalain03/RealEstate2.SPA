@@ -12,6 +12,7 @@ import { HouseListResolver } from './_resolvers/house-list.resolver';
 import { HousePhotoComponent } from './houses/house-photo/house-photo.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { UserPhotoComponent } from './users/user-photo/user-photo.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ export const appRoutes: Routes = [
             { path: 'house/edit/:id', component: HouseEditComponent, resolve: {house: HouseDetailResolver} },
             { path: 'house/photo/:id', component: HousePhotoComponent },
             { path: 'users/:id/edit', component: UserEditComponent, resolve: {user: UserDetailResolver}},
+            { path: 'users/:id/photo', component: UserPhotoComponent },
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' }

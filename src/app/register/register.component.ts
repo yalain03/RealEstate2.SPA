@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,17 +11,21 @@ export class RegisterComponent implements OnInit {
   model: any = {};
   baseUrl = 'http://localhost:5000/api/auth/';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   register() {
-    this.authService.register(this.model).subscribe(() => {
-      console.log('Registration successful');
-    }, error => {
-      console.log(error);
-    });
+    if(this.model.password === this.model.confirm) {
+      this.authService.register(this.model).subscribe(() => {
+        this.router.navigate(['/login']);
+      }, error => {
+        console.log(error);
+      });
+    } else {
+      alert('Password and confirmation are different');
+    }
   }
 
 }

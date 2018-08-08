@@ -28,6 +28,7 @@ import { HouseListResolver } from './_resolvers/house-list.resolver';
 import { HousePhotoComponent } from './houses/house-photo/house-photo.component';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { UserPhotoComponent } from './users/user-photo/user-photo.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -46,7 +47,8 @@ export function tokenGetter() {
       HouseCreateComponent,
       HouseEditComponent,
       HousePhotoComponent,
-      UserEditComponent
+      UserEditComponent,
+      UserPhotoComponent
    ],
    imports: [
       BrowserModule,

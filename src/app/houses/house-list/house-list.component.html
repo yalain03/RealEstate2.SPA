@@ -5,9 +5,11 @@
   <a [routerLink]="['/house/detail/', house.id]" routerLinkActive="router-link-active" >View House</a>
 </div>
 
+<div *ngIf="houses.length > 0">
 <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems"
             [itemsPerPage]="pagination.itemsPerPage"
-            [(ngModel)]="pagination.currentPage"
+            [(ngModel)]="pagination.currentPage "
             (pageChanged)="pageChanged($event)"
             previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
  </pagination>
+</div>

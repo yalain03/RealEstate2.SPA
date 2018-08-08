@@ -21,6 +21,7 @@ login(model: any) {
       map((response: any) => {
         const user = response;
         if (user) {
+          this.decodedToken = this.jwtHelper.decodeToken(user.token);
           localStorage.setItem('token', user.token);
         }
       })
@@ -37,6 +38,7 @@ loggedIn() {
 }
 
 logout() {
+  this.decodedToken = null;
   localStorage.removeItem('token');
   this.router.navigate(['/home']);
 }

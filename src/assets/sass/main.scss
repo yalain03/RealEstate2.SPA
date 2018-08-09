@@ -1,0 +1,35 @@
+// navigation component
+
+$color-primary: #304061;
+$color-secondary: #5C7AB7;
+
+$font-primary: Nunito;
+$font-secondary: Josefin Sans;
+
+$color-light: #fff;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-primary;
+    font-weight: 300px;
+    line-height: 1.6;
+}
+
+heading {
+    font-weight: 400;
+}
+
+@import './nav';
+@import './register';

@@ -1,0 +1,72 @@
+.register {
+    display: grid;
+    // background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(12, 1fr);
+
+    &-body {
+        min-width: 100%;
+        min-height: 100%;
+        grid-column: 4 / 10;
+        margin-top: 5rem;
+    }
+
+    &-form {
+        padding: 3rem;
+        border-radius: 0.3rem;
+        background-color: lighten($color-secondary, 35%);
+
+        &__label {
+            font-size: 1.2rem;
+            font-weight: 700px;
+        }
+
+        & input, select {
+            padding: 0.7rem;
+            background-color: $color-light;
+            border: none;
+            font-family: Nunito;
+            font-weight: 700;
+        }
+
+        & .input-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem;
+        }
+
+        & .inline-row {
+            display: inline-block;
+        }
+
+        &__input-1 {
+            
+        }
+
+        &__input-2 {
+            
+        }
+
+        & label {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        & .submition {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: $color-primary;
+            color: $color-light;
+        }
+
+        & .submition:hover {
+            cursor: pointer;
+            background-color: lighten($color-primary, 20%);
+        }
+
+        & .dummy {
+            visibility: hidden;
+        }
+    }
+}

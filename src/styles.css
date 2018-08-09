@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: Nunito;
+  font-weight: 300px;
+  line-height: 1.6; }
+
+heading {
+  font-weight: 400; }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  height: 7rem;
+  border-bottom: 0.4rem solid #304061;
+  align-items: center;
+  justify-content: space-around; }
+  .nav-left {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: #5C7AB7; }
+  .nav-right {
+    margin-right: 0.5rem; }
+    .nav-right__menu {
+      display: flex;
+      justify-content: space-between; }
+    .nav-right__item {
+      display: inline;
+      margin-left: 1rem;
+      margin-right: 1rem; }
+      .nav-right__item > a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #304061;
+        font-size: 1.5rem; }
+      .nav-right__item > a:hover {
+        border-bottom: 0.2rem solid #304061; }
+
+.register {
+  display: grid;
+  background-repeat: no-repeat;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(12, 1fr); }
+  .register-body {
+    min-width: 100%;
+    min-height: 100%;
+    grid-column: 4 / 10;
+    margin-top: 5rem; }
+  .register-form {
+    padding: 3rem;
+    border-radius: 0.3rem;
+    background-color: #d8dfee; }
+    .register-form__label {
+      font-size: 1.2rem;
+      font-weight: 700px; }
+    .register-form input, .register-form select {
+      padding: 0.7rem;
+      background-color: #fff;
+      border: none;
+      font-family: Nunito;
+      font-weight: 700; }
+    .register-form .input-row {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem; }
+    .register-form .inline-row {
+      display: inline-block; }
+    .register-form label {
+      font-size: 1.3rem;
+      font-weight: 600; }
+    .register-form .submition {
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #304061;
+      color: #fff; }
+    .register-form .submition:hover {
+      cursor: pointer;
+      background-color: #526da5; }
+    .register-form .dummy {
+      visibility: hidden; }

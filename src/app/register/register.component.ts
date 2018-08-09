@@ -28,4 +28,8 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  getUrl() {
+    return 'https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
+  }
+
 }

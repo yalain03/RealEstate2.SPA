@@ -1,0 +1,43 @@
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    height: 7rem;
+    // background-color: $color-primary;
+    border-bottom: 0.4rem solid $color-primary;
+    align-items: center;
+    justify-content: space-around;
+
+    &-left {
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+        color: $color-secondary;
+    }
+
+    &-right {
+        margin-right: 0.5rem;
+
+        &__menu {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__item {
+            display: inline;
+            margin-left: 1rem;
+            margin-right: 1rem;
+
+            & > a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $color-primary;
+                font-size: 1.5rem;
+            }
+
+            & > a:hover {
+                border-bottom: 0.2rem solid $color-primary;
+            }
+        }
+    }
+}
+

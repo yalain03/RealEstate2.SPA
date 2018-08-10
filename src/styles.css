@@ -48,12 +48,11 @@ heading {
 .register {
   display: grid;
   background-image: url("./assets/images/background.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(12, 1fr);
-  min-width: 100%;
-  min-height: 100%; }
+  grid-template-columns: repeat(12, 1fr); }
   .register-body {
     min-width: 100%;
     min-height: 100%;

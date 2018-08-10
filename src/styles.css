@@ -47,9 +47,13 @@ heading {
 
 .register {
   display: grid;
+  background-image: url("./assets/images/background.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(12, 1fr); }
+  grid-template-columns: repeat(12, 1fr);
+  min-width: 100%;
+  min-height: 100%; }
   .register-body {
     min-width: 100%;
     min-height: 100%;
@@ -58,7 +62,7 @@ heading {
   .register-form {
     padding: 3rem;
     border-radius: 0.3rem;
-    background-color: #d8dfee; }
+    background-color: rgba(255, 255, 255, 0.5); }
     .register-form__label {
       font-size: 1.2rem;
       font-weight: 700px; }
@@ -67,7 +71,8 @@ heading {
       background-color: #fff;
       border: none;
       font-family: Nunito;
-      font-weight: 700; }
+      font-weight: 700;
+      border: 0.2rem solid #304061; }
     .register-form .input-row {
       display: flex;
       justify-content: space-around;

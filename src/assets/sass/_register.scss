@@ -1,9 +1,12 @@
 .register {
     display: grid;
-    // background-image: url("background.jpg");
+    background-image: url("./assets/images/background.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(12, 1fr);
+    min-width: 100%;
+    min-height: 100%;
 
     &-body {
         min-width: 100%;
@@ -15,7 +18,7 @@
     &-form {
         padding: 3rem;
         border-radius: 0.3rem;
-        background-color: lighten($color-secondary, 35%);
+        background-color: rgba($color-light, 0.5);
 
         &__label {
             font-size: 1.2rem;
@@ -28,6 +31,7 @@
             border: none;
             font-family: Nunito;
             font-weight: 700;
+            border: 0.2rem solid $color-primary;
         }
 
         & .input-row {

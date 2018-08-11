@@ -1,12 +1,17 @@
 <nav class="nav">
   <div class="nav-left">Houzzer</div>
+  <div class="nav-logo">
+    <a [routerLink]="['/home']" routerLinkActive="router-link-active" >
+      <img src="../../assets/images/logo.jpg" alt="Logo" width="60px" height="60px;" >
+    </a>
+  </div>
   <div class="nav-right" >
     <ul class="nav-right__menu" >
       <li class="nav-right__item" ><a [routerLink]="['/houses']" routerLinkActive="router-link-active" >Houses</a></li>
       <li class="nav-right__item" *ngIf="!loggedIn()" ><a [routerLink]="['/register']" routerLinkActive="router-link-active" >Register</a></li>
       <li class="nav-right__item" *ngIf="!loggedIn()"><a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a></li>
-      <li class="nav-right__item" *ngIf="loggedIn()" (click)="logout()" >Logout</li>
-      <li class="nav-right__item" *ngIf="loggedIn()">Welcome {{ authService.decodedToken?.unique_name | titlecase }}</li>
+      <li class="nav-right__item welcome" *ngIf="loggedIn()">Welcome {{ authService.decodedToken?.unique_name | titlecase }}</li>
+      <li class="nav-right__item display" *ngIf="loggedIn()" (click)="logout()" >Logout</li>
     </ul>
   </div>
 </nav>

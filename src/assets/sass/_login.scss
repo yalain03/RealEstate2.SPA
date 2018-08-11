@@ -1,0 +1,46 @@
+.login {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 15rem 1fr;
+
+    &-instructions {
+        display: flex;
+        flex-direction: row;
+        grid-column: 1 / -1;
+        align-content: center;
+        justify-content: center;
+        line-height: 7rem;
+        font-size: large;
+    }
+
+    &-form {
+        grid-column: 6 / 8;
+
+        &__input {
+            margin-top: 2rem;
+            background-color: $color-light;
+            border: 0.2rem solid $color-primary;
+            padding: 0.7rem;
+            width: 100%;
+            font-family: Nunito;
+            font-weight: 700;
+        }
+
+        &__submit {
+            margin-top: 2rem;
+            background-color: $color-primary;
+            color: $color-light;
+            padding: 2rem;
+            border: none;
+            font-weight: 600;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+                color: lighten($color-primary, 20%);
+            }
+        }
+
+        
+    }
+}

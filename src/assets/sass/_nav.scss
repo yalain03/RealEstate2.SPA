@@ -20,6 +20,22 @@
         &__menu {
             display: flex;
             justify-content: space-between;
+
+            & .display {
+                font-size: 1.5rem;
+                color: $color-primary;
+                text-transform: uppercase;
+
+                &:hover {
+                    cursor: pointer;
+                    border-bottom: 0.2rem solid $color-primary;
+                }
+            }
+
+            & .welcome {
+                font-size: 1.3rem;
+                color: $color-secondary;
+            }
         }
 
         &__item {

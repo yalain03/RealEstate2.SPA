@@ -1,0 +1,62 @@
+.house-create {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+
+    &__form {
+        grid-column: 5 / 8;
+        margin-top: 2rem;
+
+        & label {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__input-1 {
+        margin-top: 2rem;
+        
+        & input {
+            width: 100%;
+            padding: 0.35rem 0 0.35rem 0;
+            background-color: $color-light;
+            font-family: Nunito;
+            font-weight: 700;
+            border: 0.2rem solid $color-primary;
+        }
+    }
+
+    &__input-2 {
+        display: inline-block;
+
+        & input {
+            padding: 0.35rem 0 0.35rem 0;            
+            background-color: $color-light;
+            font-family: Nunito;
+            // font-weight: 700;
+            border: 0.2rem solid $color-primary;
+        }
+    }
+
+    &__radios {
+        margin-top: 2rem;
+    }
+
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 0.5rem solid $color-primary;
+        border-radius: 50%;
+        display: block;
+        
+        &::after {
+            
+        }
+    }
+}

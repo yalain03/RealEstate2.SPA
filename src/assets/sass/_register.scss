@@ -4,7 +4,7 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-template-rows: 1fr;
+    grid-template-rows: 100%;
     grid-template-columns: repeat(12, 1fr);
 
     &-body {
@@ -27,7 +27,6 @@
         & input, select {
             padding: 0.7rem;
             background-color: $color-light;
-            border: none;
             font-family: Nunito;
             font-weight: 700;
             border: 0.2rem solid $color-primary;

@@ -1,10 +1,22 @@
-<form *ngIf="!loggedIn()" #loginForm="ngForm" (ngSubmit)="login()" >
-    <div> 
-        <input type="text" name="username" required placeholder="username" [(ngModel)]="model.username" >
+<div class="login">
+    <div class="login-instructions">
+        <p>First time Using? Please click here <a [routerLink]="['/register']">Register</a></p>
     </div>
-    <div>
-        <input type="password" name="password" required placeholder="password" [(ngModel)]="model.password" >
-    </div>
-        
-    <input [disabled]="!loginForm.valid" type="submit" value="Login">
-</form>
+    <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form" >
+        <div> 
+            <input type="text" name="username" required
+                 placeholder="username" [(ngModel)]="model.username"
+                 class="login-form__input" >
+        </div>
+        <div>
+            <input type="password" name="password" required 
+                placeholder="password" [(ngModel)]="model.password"
+                class="login-form__input" >
+        </div>
+            
+        <input [disabled]="!loginForm.valid" type="submit" value="Login"
+            class="login-form__submit" >
+    </form>
+</div>
+
+

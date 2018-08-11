@@ -33,6 +33,16 @@ heading {
     .nav-right__menu {
       display: flex;
       justify-content: space-between; }
+      .nav-right__menu .display {
+        font-size: 1.5rem;
+        color: #304061;
+        text-transform: uppercase; }
+        .nav-right__menu .display:hover {
+          cursor: pointer;
+          border-bottom: 0.2rem solid #304061; }
+      .nav-right__menu .welcome {
+        font-size: 1.3rem;
+        color: #5C7AB7; }
     .nav-right__item {
       display: inline;
       margin-left: 1rem;
@@ -51,7 +61,7 @@ heading {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100%;
   grid-template-columns: repeat(12, 1fr); }
   .register-body {
     min-width: 100%;
@@ -68,7 +78,6 @@ heading {
     .register-form input, .register-form select {
       padding: 0.7rem;
       background-color: #fff;
-      border: none;
       font-family: Nunito;
       font-weight: 700;
       border: 0.2rem solid #304061; }
@@ -91,3 +100,76 @@ heading {
       background-color: #526da5; }
     .register-form .dummy {
       visibility: hidden; }
+
+.login {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 15rem 1fr; }
+  .login-instructions {
+    display: flex;
+    flex-direction: row;
+    grid-column: 1 / -1;
+    align-content: center;
+    justify-content: center;
+    line-height: 7rem;
+    font-size: large; }
+  .login-form {
+    grid-column: 6 / 8; }
+    .login-form__input {
+      margin-top: 2rem;
+      background-color: #fff;
+      border: 0.2rem solid #304061;
+      padding: 0.7rem;
+      width: 100%;
+      font-family: Nunito;
+      font-weight: 700; }
+    .login-form__submit {
+      margin-top: 2rem;
+      background-color: #304061;
+      color: #fff;
+      padding: 2rem;
+      border: none;
+      font-weight: 600;
+      width: 100%; }
+      .login-form__submit:hover {
+        cursor: pointer;
+        color: #526da5; }
+
+.house-create {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr; }
+  .house-create__form {
+    grid-column: 5 / 8;
+    margin-top: 2rem; }
+    .house-create__form label {
+      font-size: 1.3rem;
+      font-weight: 600; }
+  .house-create__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .house-create__input-1 {
+    margin-top: 2rem; }
+    .house-create__input-1 input {
+      width: 100%;
+      padding: 0.35rem 0 0.35rem 0;
+      background-color: #fff;
+      font-family: Nunito;
+      font-weight: 700;
+      border: 0.2rem solid #304061; }
+  .house-create__input-2 {
+    display: inline-block; }
+    .house-create__input-2 input {
+      padding: 0.35rem 0 0.35rem 0;
+      background-color: #fff;
+      font-family: Nunito;
+      border: 0.2rem solid #304061; }
+  .house-create__radios {
+    margin-top: 2rem; }
+  .house-create__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 0.5rem solid #304061;
+    border-radius: 50%;
+    display: block; }

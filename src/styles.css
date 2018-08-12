@@ -165,11 +165,103 @@ heading {
       background-color: #fff;
       font-family: Nunito;
       border: 0.2rem solid #304061; }
+  .house-create__radio {
+    display: none; }
   .house-create__radios {
     margin-top: 2rem; }
   .house-create__radio-button {
-    height: 3rem;
-    width: 3rem;
-    border: 0.5rem solid #304061;
+    height: 2rem;
+    width: 2rem;
+    border: 0.3rem solid #304061;
     border-radius: 50%;
-    display: block; }
+    display: inline-block;
+    position: relative; }
+    .house-create__radio-button::after {
+      content: "";
+      display: block;
+      height: 0.8rem;
+      width: 0.8rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #304061;
+      opacity: 0;
+      transition: opacity .2s; }
+  .house-create__radio-inline {
+    display: inline;
+    width: 50%; }
+  .house-create__radio:checked ~ .house-create__radio-label .house-create__radio-button::after {
+    opacity: 1; }
+  .house-create__submit {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #304061;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 600; }
+  .house-create__submit:hover {
+    cursor: pointer;
+    background-color: #526da5; }
+
+.house-photo {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 2rem; }
+  .house-photo__form {
+    grid-column: 5 / 11; }
+  .house-photo__files {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1; }
+  .house-photo__label {
+    margin-bottom: 2rem; }
+  .house-photo__files + label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #304061;
+    display: inline-block;
+    padding: 1.5rem; }
+  .house-photo__files:focus + label,
+  .house-photo__files + label:hover {
+    background-color: #526da5;
+    cursor: pointer; }
+  .house-photo__button-upload {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    background-color: #139650;
+    border: none;
+    margin-right: 2rem; }
+    .house-photo__button-upload:hover {
+      cursor: pointer;
+      background-color: #2be481; }
+  .house-photo__button-cancel {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    background-color: #ed6a5a;
+    border: none; }
+    .house-photo__button-cancel:hover {
+      cursor: pointer;
+      background-color: #f7bdb6; }
+  .house-photo__button-remove {
+    color: #fff;
+    display: inline-block;
+    padding: 1.05rem;
+    background-color: #ed6a5a;
+    border: none; }
+    .house-photo__button-remove:hover {
+      cursor: pointer;
+      background-color: #f7bdb6; }

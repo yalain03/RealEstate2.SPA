@@ -2,6 +2,8 @@
 
 $color-primary: #304061;
 $color-secondary: #5C7AB7;
+$color-tertiary: #139650;
+$color-fourth: #ed6a5a;
 
 $font-primary: Nunito;
 $font-secondary: Josefin Sans;
@@ -35,3 +37,4 @@ heading {
 @import './register';
 @import './login';
 @import './house-create';
+@import './house-photo';

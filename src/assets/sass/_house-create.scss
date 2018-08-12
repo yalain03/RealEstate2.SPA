@@ -44,19 +44,66 @@
         }
     }
 
+    &__radio {
+        display: none;
+    }
+
     &__radios {
         margin-top: 2rem;
     }
 
+    &__radion-label {
+        
+    }
+
     &__radio-button {
-        height: 3rem;
-        width: 3rem;
-        border: 0.5rem solid $color-primary;
+        height: 2rem;
+        width: 2rem;
+        border: 0.3rem solid $color-primary;
         border-radius: 50%;
-        display: block;
+        display: inline-block;
+        position: relative;
+        // left: 0;
+        // top: 0;
         
         &::after {
-            
+            content: "";
+            display: block;
+            height: 0.8rem;
+            width: 0.8rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
         }
+    }
+
+    &__radio-inline {
+        display: inline;
+        width: 50%;
+    }
+
+    &__radio:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+    &__submit {
+        margin-top: 3rem;
+        padding: 2rem;
+        background-color: $color-primary;
+        color: $color-light;
+        border: none;
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    &__submit:hover {
+        cursor: pointer;
+        background-color: lighten($color-primary, 20%);
     }
 }

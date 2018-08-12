@@ -1,0 +1,81 @@
+.house-photo {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 2rem;
+
+    &__form {
+        grid-column: 5 / 11;
+    }
+
+    &__files {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__label {
+        margin-bottom: 2rem;
+    }
+
+    &__files + label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-light;
+        background-color: $color-primary;
+        display: inline-block;
+        padding: 1.5rem;
+    }
+
+    &__files:focus + label,
+    &__files + label:hover {
+        background-color: lighten($color-primary, 20%);
+        cursor: pointer;
+    }
+
+    &__button-upload {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-light;
+        display: inline-block;
+        padding: 1.2rem;
+        background-color: $color-tertiary;
+        border: none;
+        margin-right: 2rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($color-tertiary, 20%);
+        }
+    }
+
+    &__button-cancel {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-light;
+        display: inline-block;
+        padding: 1.2rem;
+        background-color: $color-fourth;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($color-fourth, 20%);
+        }
+    }
+
+    &__button-remove {
+        color: $color-light;
+        display: inline-block;
+        padding: 1.05rem;
+        background-color: $color-fourth;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($color-fourth, 20%);
+        }
+    }
+}

@@ -1,38 +1,58 @@
-<form #houseForm="ngForm" (ngSubmit)="updateHouse()" >
-  <div>
-    <label for="price">Price: </label>
-    <input type="text" name="price" id="price" [(ngModel)]="house.price" >
-  </div>
+<div class="house-create">
+    <form #houseForm="ngForm" (ngSubmit)="updateHouse()" class="house-create__form" >
+      <div class="house-create__top">
+          <div class="house-create__input-2">
+              <label for="price">Price: </label> <br>
+              <input type="text" name="price" id="price" [(ngModel)]="house.price">
+            </div>
+          
+            <div class="house-create__input-2">
+              <label for="rooms">Rooms: </label> <br>
+              <input type="text" name="rooms" id="rooms" [(ngModel)]="house.rooms">
+            </div>
+      </div>
+        
+      
+        <div class="house-create__input-1">
+          <label for="area">Area: </label> <br>
+          <input type="text" name="area" id="area" [(ngModel)]="house.area">
+        </div>
+      
+        <div class="house-create__input-1">
+          <label for="street">Street: </label> <br>
+          <input type="text" name="street" id="street" [(ngModel)]="house.street">
+        </div>
+      
+        <div class="house-create__input-1">
+          <label for="city">City: </label> <br>
+          <input type="text" name="city" id="city" [(ngModel)]="house.city">
+        </div>
+      
+        <div class="house-create__input-1">
+          <label for="state">State: </label> <br>
+          <input type="text" name="state" id="state" [(ngModel)]="house.state">
+        </div>
+      
+        <div class="house-create__radios" >
+          <div class="house-create__radio-inline">
+            <input type="radio" name="price" (click)="setAvailable()" class="house-create__radio" id="yes" > 
+            <label class="house-create__radio-label" for="yes" >
+              <span class="house-create__radio-button"></span>
+              Available
+            </label>
+          </div>
+          &nbsp;&nbsp;
+          <div class="house-create__radio-inline">
+            <input type="radio" name="price" (click)="setNotAvailable()" class="house-create__radio" id="no" > 
+            <label class="house-create__radio-label" for="no" >
+              <span class="house-create__radio-button"></span>
+              Not Available
+            </label>
+          </div>
+        </div>
+        
+        <input type="submit" class="house-create__submit" value="Save Changes" >
+      </form>
+</div>
 
-  <div>
-      <label for="rooms">Rooms: </label>
-    <input type="text" name="rooms" id="rooms" [(ngModel)]="house.rooms" >
-  </div>
-
-  <div>
-    <label for="area">Area: </label>
-    <input type="text" name="area" id="area" [(ngModel)]="house.area" >
-  </div>
-
-  <div>
-    <label for="street">Street: </label>
-    <input type="text" name="street" id="street" [(ngModel)]="house.street" >
-  </div>
-
-  <div>
-    <label for="city">City: </label>
-    <input type="text" name="city" id="city" [(ngModel)]="house.city" >
-  </div>
-
-  <div>
-      <label for="state">State: </label>
-    <input type="state" name="state" id="state" [(ngModel)]="house.state" >
-  </div>
-
-  <div>
-    <input type="radio" name="price" (click)="setAvailable()" > Available
-    <input type="radio" name="price" (click)="setNotAvailable()" > Not Available
-  </div>
-  <input type="submit" value="Create" >
-</form>
 

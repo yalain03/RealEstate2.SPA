@@ -34,17 +34,21 @@
         </div>
       
         <div class="house-create__radios" >
-          <input type="radio" name="price" (click)="setAvailable()" class="house-create__radio" > 
-          <label>
-            <span class="house-create__radio-button"></span>
-            Available
-          </label>
+          <div class="house-create__radio-inline">
+            <input type="radio" name="price" (click)="setAvailable()" class="house-create__radio" id="yes" > 
+            <label class="house-create__radio-label" for="yes" >
+              <span class="house-create__radio-button"></span>
+              Available
+            </label>
+          </div>
           &nbsp;&nbsp;
-          <input type="radio" name="price" (click)="setNotAvailable()" class="house-create__radio" > 
-          <label>
-            <span class="house-create__radio-button"></span>
-            Not Available
-          </label>
+          <div class="house-create__radio-inline">
+            <input type="radio" name="price" (click)="setNotAvailable()" class="house-create__radio" id="no" > 
+            <label class="house-create__radio-label" for="no" >
+              <span class="house-create__radio-button"></span>
+              Not Available
+            </label>
+          </div>
         </div>
         
         <input type="submit" class="house-create__submit" value="Create" >

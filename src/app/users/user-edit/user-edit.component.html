@@ -1,36 +1,82 @@
-<form #registerForm="ngForm" (ngSubmit)="updateUser()" >
-  <div>
-    <label for="firstName">First Name: </label>
-    <input type="text" required name="firstName" id="firstName" [(ngModel)]="user.firstName" >
+<div class="register" >
+    <div class="register-body" >
+      <form #registerForm="ngForm" (ngSubmit)="updateUser()" class="register-form" >
+        <div class="input-row">
+          <div class="inline-row" >
+            <label for="firstName" class="register-form__label" >First Name: </label><br>
+            <input class="register-form__input-1" type="text" required name="firstName" 
+              id="firstName" [(ngModel)]="user.firstName" >
+          </div>
+          <div class="inline-row" >
+            <label for="lastName" class="register-form__label">Last Name: </label><br>
+            <input class="register-form__input-1" type="text" required name="lastName" 
+              id="lastName" [(ngModel)]="user.lastName" >
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="inline-row" >
+            <label for="username" class="register-form__label">Username: </label><br>
+            <input class="register-form__input-1" type="text" required name="username" 
+              id="username" [(ngModel)]="user.username" >
+          </div>
+          <div class="inline-row dummy">
+            <input class="register-form__input-1" type="text">
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="inline-row">
+            <label for="password" class="register-form__label">Password: </label><br>
+            <input class="register-form__input-2" type="password" required name="password" 
+              placeholder="Leave blank if no change"
+              id="password" [(ngModel)]="user.password" >
+          </div>
+          <div class="inline-row">
+            <label for="password" class="register-form__label">Confirm Password: </label><br>
+            <input class="register-form__input-2" type="password" required name="confirm" 
+              placeholder="Leave blank if no change"
+              id="confirm" [(ngModel)]="confirm" >
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="inline-row">
+            <label for="email" class="register-form__label">Email: </label><br>
+            <input class="register-form__input-1" type="email" required name="email" 
+              id="email" [(ngModel)]="user.email" >
+          </div>
+          <div class="inline-row">
+            <label for="phone" class="register-form__label">Phone: </label><br>
+            <input class="register-form__input-1" type="text" required placeholder="(xxx) xxx-xxxx" name="phone" 
+              id="phone" [(ngModel)]="user.phone" >
+          </div>
+        </div>  
+        <div class="input-row">
+          <div class="inline-row">
+            <label for="dateOfBirth" class="register-form__label">Date of Birth: </label><br>
+            <input class="register-form__input-1" type="date" required name="dateOfBirth" 
+              id="dateOfBirth" [(ngModel)]="user.dateOfBirth" >
+          </div>
+          <div class="inline-row dummy">
+            <input class="register-form__input-1" type="text">
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="inline-row">
+            <label for="gender" class="register-form__label">Gender: </label><br>
+            <select class="register-form__input-1" required name="gender" 
+              id="gender" [(ngModel)]="user.gender" >
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+          </div>
+          <div class="inline-row dummy">
+            <input class="register-form__input-1" type="text">
+          </div>
+        </div>
+      
+        <div class="input-row">
+          <input class="submition" type="submit" value="Register" />
+        </div>
+      
+      </form>
   </div>
-  <div>
-    <label for="lastName">Last Name: </label>
-    <input type="text" required name="lastName" id="lastName" [(ngModel)]="user.lastName" >
   </div>
-  <div>
-    <label for="username">Username: </label>
-    <input type="text" required name="username" id="username" [(ngModel)]="user.username" >
-  </div>
-  <div>
-    <label for="email">Email: </label>
-    <input type="email" required name="email" id="email" [(ngModel)]="user.email" >
-  </div>
-  <div>
-    <label for="phone">Phone: </label>
-    <input type="text" required placeholder="(xxx) xxx-xxxx" name="phone" id="phone" [(ngModel)]="user.phone" >
-  </div>  
-  <div>
-    <label for="dateOfBirth">Date of Birth: </label>
-    <input type="date" required name="dateOfBirth" id="dateOfBirth" [(ngModel)]="user.dateOfBirth" >
-  </div>
-  <div>
-    <label for="gender">Gender: </label>
-    <select required name="gender" id="gender" [(ngModel)]="user.gender" >
-      <option value="male">male</option>
-      <option value="female">female</option>
-    </select>
-  </div>
-
-  <input type="submit" value="Save" />
-
-</form>

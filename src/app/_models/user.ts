@@ -10,4 +10,5 @@ export interface User {
     gender: string;
     photo: Photo;
     dateOfBirth: Date;
+    password: string;
 }

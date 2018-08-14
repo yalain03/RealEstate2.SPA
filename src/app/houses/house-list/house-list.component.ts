@@ -42,9 +42,18 @@ export class HouseListComponent implements OnInit {
     this.loadHouses();
   }
 
+  deleteHouse(id: number) {
+    this.userService.deleteHouse(id, this.authService.decodedToken.nameid).subscribe(() => {
+      location.reload();
+    }, error => {
+      console.log(error);
+    });
+  }
+
   loadHouses() {
     this.userService.getHouses(this.pagination.currentPage, this.pagination.itemsPerPage, this.houseParams)
       .subscribe((res: PaginatedResult<House[]>) => {
+        console.log(res);
         this.houses = res.result;
         this.pagination = res.pagination;
       }, error => {

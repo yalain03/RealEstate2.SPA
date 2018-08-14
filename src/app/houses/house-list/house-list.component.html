@@ -29,10 +29,11 @@
         <i class="fas fa-map-marked-alt icon"  ></i>
         <p>{{ house.city }}</p>
       </div>    
-      <div class="house-list__item-buttons"  >
-        <a [routerLink]="['/house/edit/', house.id]" class="house-list__item-edit" >Edit</a>
-        <input type="button" value="Delete" class="house-list__item-delete" >
-      </div>  
+      <div *ngIf="!loggedIn()"></div>
+      <a [routerLink]="['/house/edit/', house.id]" class="house-list__item-edit" *ngIf="loggedIn()" >Edit</a>
+      <input type="button" value="Delete" class="house-list__item-delete" 
+        *ngIf="loggedIn()"
+        (click)="deleteHouse(house.id)" >
     </div>
   </div>
 

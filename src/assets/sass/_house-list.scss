@@ -45,12 +45,55 @@
         }
 
         &-price,
+        &-area {
+            margin-top: 2rem;
+        }
+
+        &-price,
         &-area,
         &-rooms,
         &-location {
+            font-size: 1.5rem;
+            margin-left: 2rem;
+            color: $color-light;
+            font-family: $font-secondary;
+            
+            display: flex;
+            align-items: center;
+
             & i {
                 color: $color-light;
                 font-size: 2rem;
+            }
+        }
+
+        &-edit {
+            grid-column: 1 / 2;
+            background-color: $color-edit;
+            color: $color-light;
+            font-family: $font-secondary;
+            font-size: 1.5rem;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            padding: 1.5rem;
+
+            &:hover {
+                background-color: lighten($color-edit, 10%);
+            }
+        }
+
+        &-delete {
+            grid-column: 2 / 3;
+            background-color: $color-delete;
+            color: $color-light;
+            font-family: $font-secondary;
+            font-size: 1.5rem;    
+            border: none;
+            
+            &:hover {
+                cursor: pointer;
+                background-color: lighten($color-delete, 10%);
             }
         }
     }
@@ -92,6 +135,40 @@
         margin-top: 8rem;
         display: flex;
         grid-row: 3 / -1;
-        grid-column: 4 / 8;
+        grid-column: 1 / -1;
+        justify-content: space-around;
+    }
+
+    .icon {
+        margin-right: 1rem;
+    }
+
+    .pagination {
+        margin-top: 4rem;
+
+        & * {
+            font-family: $font-secondary;
+        }
+    }
+
+    .page-item {
+        display: inline-block;
+        list-style: none;
+        margin: 0.8rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 0.5rem 1rem;
+        
+        & > a {
+            text-decoration: none;
+        }
+    }
+
+    .active {
+        background-color: $color-primary;
+
+        & > a {
+            color: $color-light;
+        }
     }
 }

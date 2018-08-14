@@ -11,6 +11,7 @@ import { AuthService } from '../../_services/auth.service';
 })
 export class HouseDetailComponent implements OnInit {
   house: House;
+  currentPhoto;
 
   constructor(private userService: UserService, private route: ActivatedRoute,
     private router: Router, private authService: AuthService) { }
@@ -19,6 +20,8 @@ export class HouseDetailComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.house = data['house'];
     });
+    this.currentPhoto = this.house.photoUrl;
+    console.log(this.house);
   }
 
   deleteHouse(id) {

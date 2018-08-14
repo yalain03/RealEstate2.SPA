@@ -25,10 +25,11 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
     params = params.append('pageNumber', page);
     params = params.append('pageSize', itemsPerPage);
   }
+
   if(houseParams != null) {
-    const city = (houseParams.city) != null ? houseParams.city : null;
+    const city = (houseParams.city) != null ? houseParams.city : '';
     params = params.append('city', city);
-    const state = (houseParams.state) != null ? houseParams.state : null;
+    const state = (houseParams.state) != null ? houseParams.state : '';
     params = params.append('state', state);
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
@@ -41,6 +42,7 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
   return this.http.get<House[]>(this.baseUrl + 'houses', { observe: 'response', params })
     .pipe(
       map(response => {
+        // console.log(response.body);
         paginatedResult.result = response.body;
         if(response.headers.get('Pagination') != null) {
           paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
@@ -59,6 +61,7 @@ getHousesForUser(id, page?, itemsPerPage?, houseParams?): Observable<PaginatedRe
     params = params.append('pageNumber', page);
     params = params.append('pageSize', itemsPerPage);
   }
+
   if(houseParams != null) {
     const city = (houseParams.city) != null ? houseParams.city : null;
     params = params.append('city', city);

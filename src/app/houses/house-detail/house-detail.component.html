@@ -1,3 +1,16 @@
-<p>
-  {{ house?.price }}, {{ house?.area }}
-</p>
+<div class="house-detail">
+  <div class="house-detail__pic">
+    <img src="{{currentPhoto}}" alt="HousePhoto" class="house-detail__pic-elt" >
+    <div class="house-detail__owner">
+      <img src="{{house.user.userPhoto}}" alt="Owner Picture" class="userPhoto">
+      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="house-detail__pics">
+    <img *ngFor="let photo of house.photos" src="{{photo.url}}" alt="Photo" class="house-pic">
+  </div>
+  <div class="house-detail__info">
+      {{ house?.price }}, {{ house?.area }}
+  </div>
+</div>

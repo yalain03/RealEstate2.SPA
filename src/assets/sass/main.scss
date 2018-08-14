@@ -5,6 +5,8 @@ $color-secondary: #5C7AB7;
 $color-tertiary: #139650;
 $color-fourth: #ed6a5a;
 $color-house: #FF9800;
+$color-edit: #CDDC39;
+$color-delete: #F44336;
 
 $font-primary: Nunito;
 $font-secondary: Josefin Sans;
@@ -40,3 +42,4 @@ heading {
 @import './house-create';
 @import './house-photo';
 @import './house-list';
+@import './house-detail';

@@ -265,3 +265,43 @@ heading {
     .house-photo__button-remove:hover {
       cursor: pointer;
       background-color: #f7bdb6; }
+
+.house-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: min-content minmax(20rem, 1fr) 5rem; }
+  .house-list__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 5rem;
+    grid-column: 3 / 11;
+    grid-row: 2 / -1;
+    margin-top: 4rem; }
+  .house-list__search {
+    grid-column: 2 / 12;
+    grid-row: 1 / 2;
+    margin-top: 2rem; }
+    .house-list__search-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+    .house-list__search-box {
+      border: 0.2rem solid #5C7AB7;
+      padding: 0.7rem;
+      font-family: Nunito;
+      font-weight: 700; }
+    .house-list__search-button {
+      padding: 0.7rem 1rem;
+      background-color: #5C7AB7;
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      text-transform: uppercase; }
+    .house-list__search-button:hover {
+      background-color: #7f97c7;
+      cursor: pointer; }
+  .house-list__pagination {
+    margin-top: 8rem;
+    display: flex;
+    grid-row: 3 / -1;
+    grid-column: 4 / 8; }

@@ -11,6 +11,7 @@ export interface House {
     state: string;
     user: User;
     userId: number;
+    photoUrl: string;
     photos: Photo[];
     sold: boolean;
 }

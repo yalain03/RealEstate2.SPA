@@ -1,15 +1,43 @@
-<div *ngFor="let house of houses" >
-  <p>{{ house.price }}</p>
-  <p>{{ house.area }}</p>
-  <p>{{ house.rooms }}</p>
-  <a [routerLink]="['/house/detail/', house.id]" routerLinkActive="router-link-active" >View House</a>
-</div>
+<div class="house-list">
+  <div class="house-list__search">
+    <form #searchForm="ngForm" (ngSubmit)="loadHouses()" class="house-list__search-form" >
+      <input type="text" class="house-list__search-box" name="rooms" [(ngModel)]="houseParams.rooms" placeholder="rooms" />
+      <input type="text" class="house-list__search-box" name="price" [(ngModel)]="houseParams.price" placeholder="price" />
+      <input type="text" class="house-list__search-box" name="area" [(ngModel)]="houseParams.area" placeholder="area" />
+      <input type="text" class="house-list__search-box" name="city" [(ngModel)]="houseParams.city" placeholder="city" />
+      <input type="text" class="house-list__search-box" name="state" [(ngModel)]="houseParams.state" placeholder="state ex: CA" />
+      <input type="submit" value="Search" class="house-list__search-button" /> 
+    </form>    
+  </div>
+  <div class="house-list__items">
+    <div *ngFor="let house of houses" class="house-list__item" >
+      <div class="house-list__item-img">
+        <img src="{{house.photoUrl}}" alt="House Photo" width="62px;" height="62px;">
+      </div>
+      <div class="house-list__item-link">
+        <a [routerLink]="['/house/detail/', house.id]" routerLinkActive="router-link-active" >View House</a>
+      </div>
+      <div class="house-list__item-price">
+        <p>{{ house.price }}</p>
+      </div>
+      <div class="house-list__item-area">
+        <p>{{ house.area }}</p>
+      </div>
+      <div class="house-list__item-rooms">
+        <p>{{ house.rooms }}</p>
+      </div>
+      <div class="house-list__item-location">
+        <p>{{ house.city }}</p>
+      </div>      
+    </div>
+  </div>
 
-<div *ngIf="houses.length > 0">
-<pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems"
-            [itemsPerPage]="pagination.itemsPerPage"
-            [(ngModel)]="pagination.currentPage "
-            (pageChanged)="pageChanged($event)"
-            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
- </pagination>
+  <div *ngIf="houses.length > 0" class="house-list__pagination">
+    <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems"
+                [itemsPerPage]="pagination.itemsPerPage"
+                [(ngModel)]="pagination.currentPage "
+                (pageChanged)="pageChanged($event)"
+                previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+      </pagination>
+  </div>
 </div>

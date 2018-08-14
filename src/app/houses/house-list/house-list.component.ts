@@ -26,11 +26,11 @@ export class HouseListComponent implements OnInit {
     });
     // console.log(this.authService.decodedToken.nameid);
 
-    this.houseParams.rooms = null;
-    this.houseParams.area = null;
-    this.houseParams.price = null;
-    this.houseParams.state = null;
-    this.houseParams.city = null;
+    // this.houseParams.rooms = null;
+    // this.houseParams.area = null;
+    // this.houseParams.price = null;
+    // this.houseParams.state = null;
+    // this.houseParams.city = null;
   }
 
   pageChanged(event: any): void {

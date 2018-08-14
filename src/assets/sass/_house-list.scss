@@ -1,0 +1,56 @@
+.house-list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: min-content minmax(20rem, 1fr) 5rem;
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 5rem;
+        grid-column: 3 / 11;
+        grid-row: 2 / -1;
+        margin-top: 4rem;
+    }
+
+    &__search {
+        grid-column: 2 / 12;
+        grid-row: 1 / 2;        
+        margin-top: 2rem;
+
+        &-form {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        &-box {
+            border: 0.2rem solid $color-secondary;
+            padding: 0.7rem;
+            font-family: Nunito;
+            font-weight: 700;
+            border-radius: 5px;
+        }
+
+        &-button {
+            padding: 0.7rem 1rem;
+            background-color: $color-secondary;
+            font-weight: 700;
+            color: $color-light;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+
+        &-button:hover {
+            background-color: lighten($color-secondary, 10%);
+            cursor: pointer;
+        }
+    }
+
+    &__pagination {
+        margin-top: 8rem;
+        display: flex;
+        grid-row: 3 / -1;
+        grid-column: 4 / 8;
+    }
+}

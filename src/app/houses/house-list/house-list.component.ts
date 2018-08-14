@@ -33,6 +33,10 @@ export class HouseListComponent implements OnInit {
     // this.houseParams.city = null;
   }
 
+  loggedIn() {
+    return this.authService.loggedIn();
+  }
+
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadHouses();

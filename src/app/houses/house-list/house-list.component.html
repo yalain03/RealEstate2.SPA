@@ -11,24 +11,28 @@
   </div>
   <div class="house-list__items">
     <div *ngFor="let house of houses" class="house-list__item" >
-      <div class="house-list__item-img">
-        <img src="{{house.photoUrl}}" alt="House Photo" width="62px;" height="62px;">
-      </div>
-      <div class="house-list__item-link">
-        <a [routerLink]="['/house/detail/', house.id]" routerLinkActive="router-link-active" >View House</a>
-      </div>
+      <img src="{{house.photoUrl}}" alt="House Photo" class="house-list__item-img">
+      <a [routerLink]="['/house/detail/', house.id]" class="house-list__item-link" >View House</a>
       <div class="house-list__item-price">
+        <i class="fas fa-hand-holding-usd icon" ></i>
         <p>{{ house.price }}</p>
       </div>
       <div class="house-list__item-area">
-        <p>{{ house.area }}</p>
+        <i class="fas fa-expand-arrows-alt icon" ></i>
+        <p>{{ house.area }} ft<sup>2</sup></p>
       </div>
       <div class="house-list__item-rooms">
+        <i class="fas fa-door-open icon" ></i>
         <p>{{ house.rooms }}</p>
       </div>
       <div class="house-list__item-location">
+        <i class="fas fa-map-marked-alt icon"  ></i>
         <p>{{ house.city }}</p>
-      </div>      
+      </div>    
+      <div class="house-list__item-buttons"  >
+        <a [routerLink]="['/house/edit/', house.id]" class="house-list__item-edit" >Edit</a>
+        <input type="button" value="Delete" class="house-list__item-delete" >
+      </div>  
     </div>
   </div>
 

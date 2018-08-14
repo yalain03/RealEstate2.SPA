@@ -277,6 +277,35 @@ heading {
     grid-column: 3 / 11;
     grid-row: 2 / -1;
     margin-top: 4rem; }
+  .house-list__item {
+    display: grid;
+    grid-row-gap: 3.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #ffad33; }
+    .house-list__item-img {
+      width: 100%;
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      z-index: 1; }
+    .house-list__item-link {
+      grid-row: 1 / 2;
+      z-index: 3;
+      grid-column: 1 / -1;
+      width: 80%;
+      align-self: end;
+      justify-self: center;
+      font-family: Josefin Sans;
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 1.25rem;
+      background-color: #5C7AB7;
+      color: #fff;
+      font-weight: 400;
+      text-decoration: none;
+      transform: translateY(50%); }
+    .house-list__item-price i, .house-list__item-area i, .house-list__item-rooms i, .house-list__item-location i {
+      color: #fff;
+      font-size: 2rem; }
   .house-list__search {
     grid-column: 2 / 12;
     grid-row: 1 / 2;

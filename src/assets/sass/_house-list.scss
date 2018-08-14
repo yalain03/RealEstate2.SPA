@@ -12,6 +12,49 @@
         margin-top: 4rem;
     }
 
+    &__item {
+        display: grid;
+        grid-row-gap: 3.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: lighten($color-house, 10%);
+
+        &-img {
+            width: 100%;
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            z-index: 1;
+        }
+
+        &-link {
+            grid-row: 1 / 2;
+            z-index: 3;
+            grid-column: 1 / -1;
+            width: 80%;
+            align-self: end;
+            justify-self: center;
+
+            font-family: $font-secondary;
+            font-size: 1.6rem;
+            text-align: center;
+            padding: 1.25rem;
+            background-color: $color-secondary;
+            color: $color-light;
+            font-weight: 400;
+            text-decoration: none;
+            transform: translateY(50%);
+        }
+
+        &-price,
+        &-area,
+        &-rooms,
+        &-location {
+            & i {
+                color: $color-light;
+                font-size: 2rem;
+            }
+        }
+    }
+
     &__search {
         grid-column: 2 / 12;
         grid-row: 1 / 2;        
@@ -28,7 +71,6 @@
             padding: 0.7rem;
             font-family: Nunito;
             font-weight: 700;
-            border-radius: 5px;
         }
 
         &-button {
@@ -38,7 +80,6 @@
             color: $color-light;
             border: none;
             text-transform: uppercase;
-            border-radius: 5px;
         }
 
         &-button:hover {

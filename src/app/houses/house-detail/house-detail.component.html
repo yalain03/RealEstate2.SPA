@@ -5,10 +5,12 @@
       <img src="{{house.user.userPhoto}}" alt="Owner Picture" class="userPhoto">
       <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+      <i class="fas fa-map-marker-alt"></i>
     </div>
   </div>
   <div class="house-detail__pics">
-    <img *ngFor="let photo of house.photos" src="{{photo.url}}" alt="Photo" class="house-pic">
+    <img *ngFor="let photo of house.photos" src="{{photo.url}}" alt="Photo" class="house-pic"
+      (click)="setPhoto(photo.url)" >
   </div>
   <div class="house-detail__info">
       {{ house?.price }}, {{ house?.area }}

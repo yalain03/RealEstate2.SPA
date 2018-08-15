@@ -24,6 +24,10 @@ export class HouseDetailComponent implements OnInit {
     console.log(this.house);
   }
 
+  setPhoto(url: string) {
+    this.currentPhoto = url;
+  }
+
   deleteHouse(id) {
     this.userService.deleteHouse(id, this.authService.decodedToken.nameid).subscribe((response: Response) => {
       this.router.navigate(['/houses']);

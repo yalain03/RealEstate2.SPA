@@ -13,6 +13,7 @@
       (click)="setPhoto(photo.url)" >
   </div>
   <div class="house-detail__info">
-      {{ house?.price }}, {{ house?.area }}
+      {{house?.user.firstName | titlecase}} {{house?.user.lastName | titlecase}} |
+      {{house?.user.email}} - {{house?.user.phone}}
   </div>
 </div>

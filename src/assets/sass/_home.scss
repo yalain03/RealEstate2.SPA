@@ -48,8 +48,58 @@
         }
     }
 
-    &__company {
+    &__dummy {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        background: linear-gradient(rgba($color-light-dark, 0.8), rgba($color-light-dark, 0.8)), url('./assets/images/world1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
 
+    &__company {
+        &-left {
+            grid-row: 2 / 3;
+            grid-column: 3 / 6;
+            // background-color: $color-light-dark;
+
+            & img {
+                transform: translateY(-75%);
+            }
+
+            & p, & h3 {
+                color: $color-primary;
+            }
+
+            & h3 {
+                font-size: 1.7rem;
+                margin-bottom: 1.5rem;
+                transform: translateY(-30%);
+            }
+
+            & p {
+                font-size: 1.2rem;
+            }
+        }
+
+        &-right {
+            grid-row: 2 / 3;
+            grid-column: 6 / 9;
+
+            & p, & h3 {
+                color: $color-primary;
+            }
+
+            & h3 {
+                margin-top: 5rem;
+                font-size: 1.7rem;
+                margin-bottom: 1.5rem;
+            }
+
+            & p {
+                font-size: 1.2rem;
+            }
+        }
     }
 
     &__testimonials {

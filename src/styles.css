@@ -91,6 +91,37 @@ heading {
       width: 50rem;
       color: #304061;
       margin-bottom: 2rem; }
+  .home__dummy {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    background: linear-gradient(rgba(221, 221, 221, 0.8), rgba(221, 221, 221, 0.8)), url("./assets/images/world1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+  .home__company-left {
+    grid-row: 2 / 3;
+    grid-column: 3 / 6; }
+    .home__company-left img {
+      transform: translateY(-75%); }
+    .home__company-left p, .home__company-left h3 {
+      color: #304061; }
+    .home__company-left h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1.5rem;
+      transform: translateY(-30%); }
+    .home__company-left p {
+      font-size: 1.2rem; }
+  .home__company-right {
+    grid-row: 2 / 3;
+    grid-column: 6 / 9; }
+    .home__company-right p, .home__company-right h3 {
+      color: #304061; }
+    .home__company-right h3 {
+      margin-top: 5rem;
+      font-size: 1.7rem;
+      margin-bottom: 1.5rem; }
+    .home__company-right p {
+      font-size: 1.2rem; }
 
 .register {
   display: grid;

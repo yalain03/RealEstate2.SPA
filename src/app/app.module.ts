@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PaginationModule } from 'ngx-bootstrap';
 import { FileUploadModule } from 'ng2-file-upload';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import {SlideshowModule} from 'ng-simple-slideshow';
 import { AuthGuard } from './_guards/auth.guard';
 
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
@@ -67,7 +69,9 @@ export function tokenGetter() {
           }
       }),
       PaginationModule.forRoot(),
-      FileUploadModule
+      FileUploadModule,
+      NgProgressModule.forRoot(),
+      SlideshowModule,
    ],
    providers: [
       AuthService,

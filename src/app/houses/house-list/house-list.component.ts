@@ -4,6 +4,8 @@ import { UserService } from '../../_services/user.service';
 import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 import { Pagination, PaginatedResult } from '../../_models/pagination';
 import { AuthService } from '../../_services/auth.service';
+// import { NgProgress } from '@ngx-progressbar/core';
+import { ProgressService } from '../../_services/progress.service';
 
 @Component({
   selector: 'app-house-list',
@@ -17,7 +19,7 @@ export class HouseListComponent implements OnInit {
   pagination: Pagination;
 
   constructor(private userService: UserService, private route: ActivatedRoute,
-    private authService: AuthService) { }
+    private authService: AuthService, private progressService: ProgressService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -51,11 +53,13 @@ export class HouseListComponent implements OnInit {
   }
 
   loadHouses() {
+    this.progressService.getProgress().start();
     this.userService.getHouses(this.pagination.currentPage, this.pagination.itemsPerPage, this.houseParams)
       .subscribe((res: PaginatedResult<House[]>) => {
-        console.log(res);
+        // console.log(res);
         this.houses = res.result;
         this.pagination = res.pagination;
+        this.progressService.getProgress().complete();
       }, error => {
         console.log(error);
       });

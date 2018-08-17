@@ -1,0 +1,62 @@
+.home {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(12.5rem, 25rem));
+
+    &__overview {
+        // grid-column: 3 / 9;
+
+        &-left {
+            grid-column: 3 / 6;
+            & > .button {
+                position: relative;
+                background-color: $color-primary;
+                width: 60%;
+                color: $color-light;
+                padding: 1.5rem;
+                margin-top: 12rem;
+                text-align: center;
+                font-size: 1.5rem;
+
+                & > .sm-button {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    transform: translateX(-70%) translateY(-60%);
+                    background-color: $color-house;
+                    color: $color-light;
+                    padding: 1rem;
+                }
+            }
+        }
+
+        &-right {
+            grid-column: 6 / 9;
+            margin-top: 18rem;
+
+            .heading {
+                font-size: 1.5rem;
+                font-weight: 700;
+                transform: translateX(-15%);
+            }
+
+            & p {
+                font-size: 1.2rem;
+                width: 50rem;
+                color: $color-primary;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__company {
+
+    }
+
+    &__testimonials {
+
+    }
+
+    &__blank {
+
+    }
+}

@@ -57,6 +57,41 @@ heading {
       .nav-right__item > a:hover {
         border-bottom: 0.2rem solid #304061; }
 
+.home {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(12.5rem, 25rem)); }
+  .home__overview-left {
+    grid-column: 3 / 6; }
+    .home__overview-left > .button {
+      position: relative;
+      background-color: #304061;
+      width: 60%;
+      color: #fff;
+      padding: 1.5rem;
+      margin-top: 12rem;
+      text-align: center;
+      font-size: 1.5rem; }
+      .home__overview-left > .button > .sm-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(-70%) translateY(-60%);
+        background-color: #FF9800;
+        color: #fff;
+        padding: 1rem; }
+  .home__overview-right {
+    grid-column: 6 / 9;
+    margin-top: 18rem; }
+    .home__overview-right .heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      transform: translateX(-15%); }
+    .home__overview-right p {
+      font-size: 1.2rem;
+      width: 50rem;
+      color: #304061;
+      margin-bottom: 2rem; }
+
 .register {
   display: grid;
   background-image: url("./assets/images/background.jpg");

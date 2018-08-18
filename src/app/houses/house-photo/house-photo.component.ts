@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router, ActivatedRouteSnapshot } from '../../../../node_modules/@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
 import { UserService } from '../../_services/user.service';
-import { Photo } from '../../_models/photo';
 import { FileUploader } from 'ng2-file-upload';
 import { environment } from '../../../environments/environment';
 

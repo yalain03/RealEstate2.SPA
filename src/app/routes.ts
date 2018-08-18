@@ -28,8 +28,8 @@ export const appRoutes: Routes = [
             { path: 'house/create', component: HouseCreateComponent },
             { path: 'house/edit/:id', component: HouseEditComponent, resolve: {house: HouseDetailResolver} },
             { path: 'house/photo/:id', component: HousePhotoComponent },
-            { path: 'users/:id/edit', component: UserEditComponent, resolve: {user: UserDetailResolver}},
-            { path: 'users/:id/photo', component: UserPhotoComponent },
+            { path: 'users/edit/:id', component: UserEditComponent, resolve: {user: UserDetailResolver}},
+            { path: 'users/photo/:id', component: UserPhotoComponent },
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' }

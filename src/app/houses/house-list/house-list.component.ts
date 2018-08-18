@@ -53,6 +53,10 @@ export class HouseListComponent implements OnInit {
     });
   }
 
+  updateUser(id: number) {
+    this.route
+  }
+
   loadHouses() {
     this.progressService.getProgress().start();
     this.userService.getHouses(this.pagination.currentPage, this.pagination.itemsPerPage, this.houseParams)

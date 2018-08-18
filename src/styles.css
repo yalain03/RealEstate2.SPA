@@ -264,7 +264,6 @@ heading {
 
 .register {
   display: grid;
-  background-image: url("./assets/images/background.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -479,7 +478,7 @@ heading {
   grid-template-rows: min-content 10rem minmax(20rem, 1fr) 5rem; }
   .house-list__new {
     grid-row: 2 / 3;
-    grid-column: 3;
+    grid-column: 3 / 5;
     margin-top: 4rem; }
     .house-list__new > a {
       text-decoration: none;
@@ -489,6 +488,34 @@ heading {
       padding: 2rem;
       font-weight: 600; }
       .house-list__new > a:hover {
+        background-color: #91a5ce;
+        transform: scale(1.2); }
+  .house-list__update-user {
+    grid-row: 2 / 3;
+    grid-column: 6 / 8;
+    margin-top: 4rem; }
+    .house-list__update-user > a {
+      text-decoration: none;
+      background-color: #5C7AB7;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 2rem;
+      font-weight: 600; }
+      .house-list__update-user > a:hover {
+        background-color: #91a5ce;
+        transform: scale(1.2); }
+  .house-list__user-photo {
+    grid-row: 2 / 3;
+    grid-column: 9 / 11;
+    margin-top: 4rem; }
+    .house-list__user-photo > a {
+      text-decoration: none;
+      background-color: #5C7AB7;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 2rem;
+      font-weight: 600; }
+      .house-list__user-photo > a:hover {
         background-color: #91a5ce;
         transform: scale(1.2); }
   .house-list__items {
@@ -622,40 +649,16 @@ heading {
       width: 100%;
       height: 100%; }
   .house-detail__owner {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    justify-content: space-evenly;
-    align-content: center;
-    background-color: rgba(255, 255, 255, 0.3);
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 7%; }
-    .house-detail__owner > * {
-      margin-left: auto;
-      margin-right: auto; }
-    .house-detail__owner:first-child {
-      margin-top: 10rem; }
-    .house-detail__owner:last-child {
-      margin-bottom: 4rem; }
-    .house-detail__owner > img {
-      border-radius: 50%;
-      width: 6.2rem;
-      height: 6.2rem;
-      border: 0.4rem solid #304061; }
-    .house-detail__owner i {
-      font-size: 2rem;
-      color: #fff; }
-  .house-detail__pics {
     grid-column: 11 / 13;
     grid-row: 1 / 3;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll; }
-    .house-detail__pics .house-pic {
-      width: 80%;
-      margin: 1rem auto 0 auto; }
+    background-color: #304061;
+    align-content: space-around;
+    justify-content: center; }
+    .house-detail__owner i {
+      color: #fff; }
   .house-detail__info {
     display: flex;
     flex-direction: row;
@@ -668,6 +671,19 @@ heading {
     font-weight: 400;
     font-size: 1.7rem;
     align-items: center; }
+    .house-detail__info > span {
+      margin-left: 2rem;
+      margin-right: 2rem; }
+    .house-detail__info > button {
+      background-color: rgba(255, 255, 255, 0.2); }
+      .house-detail__info > button:hover {
+        cursor: pointer; }
+    .house-detail__info i {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      color: #fff; }
   .house-detail ::-webkit-scrollbar {
     width: 5px; }
   .house-detail ::-webkit-scrollbar-track {

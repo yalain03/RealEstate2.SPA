@@ -9,6 +9,7 @@ export interface House {
     street: string;
     city: string;
     state: string;
+    zip: string;
     user: User;
     userId: number;
     photoUrl: string;

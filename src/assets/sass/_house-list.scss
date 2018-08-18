@@ -5,7 +5,7 @@
 
     &__new {
         grid-row: 2 / 3;
-        grid-column: 3;
+        grid-column: 3 / 5;
         margin-top: 4rem;
 
         & > a {
@@ -21,6 +21,46 @@
                 transform: scale(1.2);
             }
         }
+    }
+
+    &__update-user {
+        grid-row: 2 / 3;
+        grid-column: 6 / 8;
+        margin-top: 4rem;
+
+        & > a {
+            text-decoration: none;
+            background-color: $color-secondary;
+            color: $color-light;
+            font-size: 1.5rem;
+            padding: 2rem;
+            font-weight: 600;
+
+            &:hover {
+                background-color: lighten($color-secondary, 15%);
+                transform: scale(1.2);
+            }
+        }   
+    }
+
+    &__user-photo {
+        grid-row: 2 / 3;
+        grid-column: 9 / 11;
+        margin-top: 4rem;
+
+        & > a {
+            text-decoration: none;
+            background-color: $color-secondary;
+            color: $color-light;
+            font-size: 1.5rem;
+            padding: 2rem;
+            font-weight: 600;
+
+            &:hover {
+                background-color: lighten($color-secondary, 15%);
+                transform: scale(1.2);
+            }
+        }   
     }
 
     &__items {

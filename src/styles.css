@@ -686,7 +686,8 @@ heading {
       margin-left: 2rem;
       margin-right: 2rem; }
     .house-detail__info > button {
-      background-color: rgba(255, 255, 255, 0.2); }
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none; }
       .house-detail__info > button:hover {
         cursor: pointer; }
     .house-detail__info i {

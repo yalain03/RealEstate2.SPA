@@ -321,6 +321,12 @@
     
 
     &__blank {
+        grid-row: 7 / 8;
+        grid-column: 1 / -1;
+        height: 2rem;
 
+        & > p {
+            visibility: hidden;
+        }
     }
 }

@@ -255,6 +255,12 @@ heading {
       background-color: rgba(48, 64, 97, 0.9);
       width: 100%;
       height: 100%; }
+  .home__blank {
+    grid-row: 7 / 8;
+    grid-column: 1 / -1;
+    height: 2rem; }
+    .home__blank > p {
+      visibility: hidden; }
 
 .register {
   display: grid;

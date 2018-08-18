@@ -13,13 +13,13 @@
     <a [routerLink]="['/house/create']" routerLinkActive="router-link-active" >+ House</a>
   </div>
   <div class="house-list__update-user" *ngIf="loggedIn()">
-    <a [routerLink]="['/users/edit/', authService.decodedToken.nameid]" routerLinkActive="router-link-active" >Update Profile Info</a>
+    <a [routerLink]="['/users/edit/', getService().decodedToken.nameid]" routerLinkActive="router-link-active" >Update Profile Info</a>
   </div>
   <div class="house-list__user-photo" *ngIf="loggedIn()">
-    <a [routerLink]="['/users/photo/', authService.decodedToken.nameid]" routerLinkActive="router-link-active" >+ User Photo</a>
+    <a [routerLink]="['/users/photo/', getService().decodedToken.nameid]" routerLinkActive="router-link-active" >+ User Photo</a>
   </div>
   <div class="house-list__items">
-    <div *ngFor="let house of houses" class="house-list__item" >
+    <div *ngFor="let house of houses" class="house-list__item">
       <img src="{{house.photoUrl}}" alt="House Photo" class="house-list__item-img">
       <a [routerLink]="['/house/detail/', house.id]" class="house-list__item-link" >View House</a>
       <div class="house-list__item-price">

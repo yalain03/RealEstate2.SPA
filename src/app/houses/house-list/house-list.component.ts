@@ -35,6 +35,10 @@ export class HouseListComponent implements OnInit {
     // this.houseParams.city = null;
   }
 
+  public getService() {
+    return this.authService;
+  }
+
   loggedIn() {
     return this.authService.loggedIn();
   }

@@ -45,6 +45,7 @@ export class HouseListComponent implements OnInit {
   }
 
   deleteHouse(id: number) {
+    console.log(id);
     this.userService.deleteHouse(id, this.authService.decodedToken.nameid).subscribe(() => {
       location.reload();
     }, error => {

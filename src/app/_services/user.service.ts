@@ -101,7 +101,7 @@ updateHouse(model: House) {
 }
 
 deleteHouse(id: number, userId: number) {
-  return this.http.delete(this.baseUrl + 'houses/users/' + userId + '/delete/' + id);
+  return this.http.delete(this.baseUrl + 'houses/user/' + userId + '/delete/' + id);
 }
 
 getUser(id: number) {

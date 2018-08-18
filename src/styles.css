@@ -476,13 +476,27 @@ heading {
 .house-list {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: min-content minmax(20rem, 1fr) 5rem; }
+  grid-template-rows: min-content 10rem minmax(20rem, 1fr) 5rem; }
+  .house-list__new {
+    grid-row: 2 / 3;
+    grid-column: 3;
+    margin-top: 4rem; }
+    .house-list__new > a {
+      text-decoration: none;
+      background-color: #5C7AB7;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 2rem;
+      font-weight: 600; }
+      .house-list__new > a:hover {
+        background-color: #91a5ce;
+        transform: scale(1.2); }
   .house-list__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 5rem;
     grid-column: 3 / 11;
-    grid-row: 2 / -1;
+    grid-row: 3 / 4;
     margin-top: 4rem; }
   .house-list__item {
     display: grid;
@@ -570,7 +584,7 @@ heading {
   .house-list__pagination {
     margin-top: 8rem;
     display: flex;
-    grid-row: 3 / -1;
+    grid-row: 4 / -1;
     grid-column: 1 / -1;
     justify-content: space-around; }
   .house-list .icon {

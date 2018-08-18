@@ -9,6 +9,9 @@
       <input type="submit" value="Search" class="house-list__search-button" /> 
     </form>    
   </div>
+  <div class="house-list__new">
+    <a [routerLink]="['/house/create']" routerLinkActive="router-link-active" >+ House</a>
+  </div>
   <div class="house-list__items">
     <div *ngFor="let house of houses" class="house-list__item" >
       <img src="{{house.photoUrl}}" alt="House Photo" class="house-list__item-img">

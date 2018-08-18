@@ -30,7 +30,12 @@
       
         <div class="house-create__input-1">
           <label for="state">State: </label> <br>
-          <input type="text" name="state" id="state" [(ngModel)]="model.state">
+          <input type="text" name="state" id="state" [(ngModel)]="model.state" placeholder="ex: MO" >
+        </div>
+
+        <div class="house-create__input-1">
+          <label for="zip">Zip: </label> <br>
+          <input type="text" name="zip" id="zip" [(ngModel)]="model.zip">
         </div>
       
         <div class="house-create__radios" >

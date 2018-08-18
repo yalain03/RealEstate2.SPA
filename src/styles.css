@@ -142,7 +142,8 @@ heading {
     grid-column: 3 / 6;
     grid-row: 3 / 4; }
     .home__history-left > h3 {
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      color: #fff; }
   .home__first-date {
     grid-row: 4 / 5;
     grid-column: 6 / 9;
@@ -151,7 +152,7 @@ heading {
     flex-direction: row; }
     .home__first-date > .date {
       margin-left: 2rem; }
-      .home__first-date > .date > h3, .home__first-date > .date h3 > p {
+      .home__first-date > .date > h3, .home__first-date > .date > p {
         color: #fff;
         z-index: 2; }
     .home__first-date > .cir {
@@ -179,12 +180,11 @@ heading {
   .home__second-date {
     grid-row: 5 / 6;
     grid-column: 3 / 6;
-    margin-top: 2rem;
     display: flex;
     flex-direction: row; }
     .home__second-date > .date {
       margin-left: 2rem; }
-      .home__second-date > .date > h3, .home__second-date > .date h3 > p {
+      .home__second-date > .date > h3, .home__second-date > .date > p {
         color: #fff;
         z-index: 2; }
     .home__second-date > .cir {
@@ -211,12 +211,11 @@ heading {
   .home__third-date {
     grid-row: 6 / 7;
     grid-column: 6 / 9;
-    margin-top: 2rem;
     display: flex;
     flex-direction: row; }
     .home__third-date > .date {
       margin-left: 2rem; }
-      .home__third-date > .date > h3, .home__third-date > .date h3 > p {
+      .home__third-date > .date > h3, .home__third-date > .date > p {
         color: #fff;
         z-index: 2; }
     .home__third-date > .cir {

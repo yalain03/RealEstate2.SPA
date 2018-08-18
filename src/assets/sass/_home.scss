@@ -133,6 +133,7 @@
 
             & > h3 {
                 font-size: 1.5rem;
+                color: $color-light;
             }
         }
     }
@@ -147,7 +148,7 @@
         & > .date {
             margin-left: 2rem;
 
-            & > h3, h3 > p {
+            & > h3, & > p {
                 color: $color-light;
                 z-index: 2;
             }
@@ -191,14 +192,14 @@
     &__second-date {
         grid-row: 5 / 6;
         grid-column: 3 / 6;
-        margin-top: 2rem;
+        // margin-top: 2rem;
         display: flex;
         flex-direction: row;
 
         & > .date {
             margin-left: 2rem;
 
-            & > h3, h3 > p {
+            & > h3, & > p {
                 color: $color-light;
                 z-index: 2;
             }
@@ -242,14 +243,14 @@
     &__third-date {
         grid-row: 6 / 7;
         grid-column: 6 / 9;
-        margin-top: 2rem;
+        // margin-top: 2rem;
         display: flex;
         flex-direction: row;
 
         & > .date {
             margin-left: 2rem;
 
-            & > h3, h3 > p {
+            & > h3, & > p {
                 color: $color-light;
                 z-index: 2;
             }

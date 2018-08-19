@@ -33,8 +33,6 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
     params = params.append('state', state);
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
-    // const price = (houseParams.price) != null ? houseParams.price : -1;
-    // params = params.append('price', price);
     let price = houseParams.price;
     if(price == null || price === '') {
       price = -1;
@@ -50,7 +48,6 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
   return this.http.get<House[]>(this.baseUrl + 'houses', { observe: 'response', params })
     .pipe(
       map(response => {
-        // console.log(response.body);
         paginatedResult.result = response.body;
         if(response.headers.get('Pagination') != null) {
           paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
@@ -78,10 +75,6 @@ getHousesForUser(id, page?, itemsPerPage?, houseParams?): Observable<PaginatedRe
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
     params = params.append('available', houseParams.available);
-    // const price = (houseParams.price) != null ? houseParams.price : -1;
-    // params = params.append('price', price);
-    // const area = (houseParams.area) != null ? houseParams.area : -1;
-    // params = params.append('area', area);
     let price = houseParams.price;
     if(price == null || price === '') {
       price = -1;
@@ -136,6 +129,6 @@ deletePhoto(houseId: number, id: number) {
 }
 
 setMainPhoto(houseId, id) {
-  return this.http.post(this.baseUrl + 'houses/' + houseId + '/photos/' + id + '/main', {});
+  return this.http.post(this.baseUrl + 'houses/' + houseId + '/photos/' + id, {});
 }
 }

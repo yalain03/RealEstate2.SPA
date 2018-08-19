@@ -63,16 +63,16 @@ export class HouseDetailComponent implements OnInit {
     } 
   }
 
-  // setMain(id) {
-  //   if(confirm('Set Main Photo?')) {
-  //     return this.userService.setMainPhoto(this.house.id, id).subscribe((response: Response) => {
-  //       // location.reload();
-  //       alert(response);
-  //     }, error => {
-  //       alert(error);
-  //     });
-  //   }
-  // }
+  setMain(id) {
+    if(confirm('Set Main Photo?')) {
+      return this.userService.setMainPhoto(this.house.id, id).subscribe((response: Response) => {
+        location.reload();
+        // alert(response);
+      }, error => {
+        alert(error);
+      });
+    }
+  }
 
   loggedIn() {
     return this.authService.loggedIn();

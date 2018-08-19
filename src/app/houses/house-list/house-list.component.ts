@@ -17,6 +17,7 @@ export class HouseListComponent implements OnInit {
   house: House = JSON.parse(localStorage.getItem('user'));
   houseParams: any = {};
   pagination: Pagination;
+  availabilities = [{value: 'yes', display: 'yes'}, {value: 'no', display: 'no'}];
 
   constructor(private userService: UserService, private route: ActivatedRoute,
     private authService: AuthService, private progressService: ProgressService) { }

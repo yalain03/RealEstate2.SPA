@@ -71,12 +71,13 @@ getHousesForUser(id, page?, itemsPerPage?, houseParams?): Observable<PaginatedRe
   }
 
   if(houseParams != null) {
-    const city = (houseParams.city) != null ? houseParams.city : null;
+    const city = (houseParams.city) != null ? houseParams.city : '';
     params = params.append('city', city);
-    const state = (houseParams.state) != null ? houseParams.state : null;
+    const state = (houseParams.state) != null ? houseParams.state : '';
     params = params.append('state', state);
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
+    params = params.append('available', houseParams.available);
     // const price = (houseParams.price) != null ? houseParams.price : -1;
     // params = params.append('price', price);
     // const area = (houseParams.area) != null ? houseParams.area : -1;

@@ -135,6 +135,6 @@ deletePhoto(houseId: number, id: number) {
 }
 
 setMainPhoto(houseId, id) {
-  return this.http.put(this.baseUrl + 'houses/' + id + '/photos/' + id + '/main', {});
+  return this.http.post(this.baseUrl + 'houses/' + houseId + '/photos/' + id + '/main', {});
 }
 }

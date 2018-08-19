@@ -33,9 +33,17 @@ getHouses(page?, itemsPerPage?, houseParams?): Observable<PaginatedResult<House[
     params = params.append('state', state);
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
-    const price = (houseParams.price) != null ? houseParams.price : -1;
+    // const price = (houseParams.price) != null ? houseParams.price : -1;
+    // params = params.append('price', price);
+    let price = houseParams.price;
+    if(price == null || price === '') {
+      price = -1;
+    }
     params = params.append('price', price);
-    const area = (houseParams.area) != null ? houseParams.area : -1;
+    let area = houseParams.area;
+    if(area == null || area === '') {
+      area = -1;
+    }
     params = params.append('area', area);
   }
 
@@ -69,9 +77,19 @@ getHousesForUser(id, page?, itemsPerPage?, houseParams?): Observable<PaginatedRe
     params = params.append('state', state);
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
-    const price = (houseParams.price) != null ? houseParams.price : -1;
+    // const price = (houseParams.price) != null ? houseParams.price : -1;
+    // params = params.append('price', price);
+    // const area = (houseParams.area) != null ? houseParams.area : -1;
+    // params = params.append('area', area);
+    let price = houseParams.price;
+    if(price == null || price === '') {
+      price = -1;
+    }
     params = params.append('price', price);
-    const area = (houseParams.area) != null ? houseParams.area : -1;
+    let area = houseParams.area;
+    if(area == null || area === '') {
+      area = -1;
+    }
     params = params.append('area', area);
   }
 

@@ -1,23 +1,23 @@
 <div class="register" >
   <div class="register-body" >
-    <form #registerForm="ngForm" (ngSubmit)="register()" class="register-form" >
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form" >
       <div class="input-row">
         <div class="inline-row" >
           <label for="firstName" class="register-form__label" >First Name: </label><br>
-          <input class="register-form__input-1" type="text" required name="firstName" 
-            id="firstName" [(ngModel)]="model.firstName" >
+          <input class="register-form__input-1" type="text" formControlName="firstName" 
+            id="firstName"  >
         </div>
         <div class="inline-row" >
           <label for="lastName" class="register-form__label">Last Name: </label><br>
-          <input class="register-form__input-1" type="text" required name="lastName" 
-            id="lastName" [(ngModel)]="model.lastName" >
+          <input class="register-form__input-1" type="text" formControlName="lastName" 
+            id="lastName"  >
         </div>
       </div>
       <div class="input-row">
         <div class="inline-row" >
           <label for="username" class="register-form__label">Username: </label><br>
-          <input class="register-form__input-1" type="text" required name="username" 
-            id="username" [(ngModel)]="model.username" >
+          <input class="register-form__input-1" type="text" formControlName="username" 
+            id="username"  >
         </div>
         <div class="inline-row dummy">
           <input class="register-form__input-1" type="text">
@@ -26,32 +26,32 @@
       <div class="input-row">
         <div class="inline-row">
           <label for="password" class="register-form__label">Password: </label><br>
-          <input class="register-form__input-2" type="password" required name="password" 
-            id="password" [(ngModel)]="model.password" >
+          <input class="register-form__input-2" type="password" formControlName="password" 
+            id="password" placeholder="At least 6 characters"  >
         </div>
         <div class="inline-row">
           <label for="password" class="register-form__label">Confirm Password: </label><br>
-          <input class="register-form__input-2" type="password" required name="confirm" 
-            id="confirm" [(ngModel)]="model.confirm" >
+          <input class="register-form__input-2" type="password" formControlName="confirmPassword" 
+            id="confirmPassword"  >
         </div>
       </div>
       <div class="input-row">
         <div class="inline-row">
           <label for="email" class="register-form__label">Email: </label><br>
-          <input class="register-form__input-1" type="email" required name="email" 
-            id="email" [(ngModel)]="model.email" >
+          <input class="register-form__input-1" type="email" formControlName="email" 
+            id="email"  >
         </div>
         <div class="inline-row">
           <label for="phone" class="register-form__label">Phone: </label><br>
-          <input class="register-form__input-1" type="text" required placeholder="(xxx) xxx-xxxx" name="phone" 
-            id="phone" [(ngModel)]="model.phone" >
+          <input class="register-form__input-1" type="text" placeholder="(xxx) xxx-xxxx" formControlName="phone" 
+            id="phone"  >
         </div>
       </div>  
       <div class="input-row">
         <div class="inline-row">
           <label for="dateOfBirth" class="register-form__label">Date of Birth: </label><br>
-          <input class="register-form__input-1" type="date" required name="dateOfBirth" 
-            id="dateOfBirth" [(ngModel)]="model.dateOfBirth" >
+          <input class="register-form__input-1" type="date" formControlName="dateOfBirth" 
+            id="dateOfBirth" >
         </div>
         <div class="inline-row dummy">
           <input class="register-form__input-1" type="text">
@@ -60,8 +60,8 @@
       <div class="input-row">
         <div class="inline-row">
           <label for="gender" class="register-form__label">Gender: </label><br>
-          <select class="register-form__input-1" required name="gender" 
-            id="gender" [(ngModel)]="model.gender" >
+          <select class="register-form__input-1" formControlName="gender" 
+            id="gender" >
             <option value="male">male</option>
             <option value="female">female</option>
           </select>
@@ -72,7 +72,7 @@
       </div>
     
       <div class="input-row">
-        <input class="submition" type="submit" value="Register" />
+        <input class="submition" [disabled]="!registerForm.valid" type="submit" value="Register" />
       </div>
     
     </form>

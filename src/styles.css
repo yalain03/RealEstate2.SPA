@@ -301,6 +301,10 @@ heading {
       padding: 2rem;
       background-color: #304061;
       color: #fff; }
+      .register-form .submition:disabled {
+        cursor: none;
+        background-color: #b5c2db;
+        color: #ccc; }
     .register-form .submition:hover {
       cursor: pointer;
       background-color: #526da5; }

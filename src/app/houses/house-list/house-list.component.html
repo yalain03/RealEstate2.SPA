@@ -1,9 +1,9 @@
 <div class="house-list">
   <div class="house-list__search">
     <form #searchForm="ngForm" (ngSubmit)="loadHouses()" class="house-list__search-form" >
-      <input type="text" class="house-list__search-box" name="rooms" [(ngModel)]="houseParams.rooms" placeholder="rooms" />
-      <input type="text" class="house-list__search-box" name="price" [(ngModel)]="houseParams.price" placeholder="price" />
-      <input type="text" class="house-list__search-box" name="area" [(ngModel)]="houseParams.area" placeholder="area" />
+      <input type="text" class="house-list__search-box" name="rooms" [(ngModel)]="houseParams.rooms" placeholder="minimum rooms" />
+      <input type="text" class="house-list__search-box" name="price" [(ngModel)]="houseParams.price" placeholder="maximum price" />
+      <input type="text" class="house-list__search-box" name="area" [(ngModel)]="houseParams.area" placeholder="minimum area" />
       <input type="text" class="house-list__search-box" name="city" [(ngModel)]="houseParams.city" placeholder="city" />
       <input type="text" class="house-list__search-box" name="state" [(ngModel)]="houseParams.state" placeholder="state ex: CA" />
       <input type="submit" value="Search" class="house-list__search-button" /> 
@@ -36,7 +36,7 @@
       </div>
       <div class="house-list__item-location">
         <i class="fas fa-map-marked-alt icon"  ></i>
-        <p>{{ house.city }}</p>
+        <p>{{ house.city | titlecase }}</p>
       </div>    
       <div *ngIf="!loggedIn()"></div>
       <a [routerLink]="['/house/edit/', house.id]" class="house-list__item-edit" *ngIf="loggedIn()" >Edit</a>

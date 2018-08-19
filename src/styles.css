@@ -158,7 +158,6 @@ heading {
     .home__first-date > .cir {
       height: 2rem;
       width: 2rem;
-      border: 0.3rem solid #304061;
       border: none;
       display: inline-block;
       transform: translateX(-50%); }
@@ -168,8 +167,7 @@ heading {
         height: 2rem;
         width: 2rem;
         border-radius: 50%;
-        background-color: #FF9800;
-        transition: opacity .2s; }
+        background-color: #FF9800; }
       .home__first-date > .cir > span::after {
         content: "";
         height: 3.2rem;

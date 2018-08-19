@@ -66,12 +66,32 @@
             margin-right: 2rem;
         }
 
+        & > .delete {
+            margin-right: 4rem;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        & > .main {
+            margin-left: 4rem;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
         & > button {
-            background-color: rgba($color-light, 0.2);
+            background-color: rgba($color-light, 0.5);
             border: none;
             
             &:hover {
                 cursor: pointer;
+            }
+
+            &:disabled {
+                background-color: rgba($color-light, 0.3);
             }
         }
 

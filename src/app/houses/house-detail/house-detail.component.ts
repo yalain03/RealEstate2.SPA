@@ -24,13 +24,11 @@ export class HouseDetailComponent implements OnInit {
       this.house = data['house'];
     });
     this.currentPhoto = this.house.photoUrl;
-    console.log(this.house);
-    this.photosUrls = this.house.photos.map(item => item.url);
-    // console.log(this.photosUrls);
+    this.photosUrls = this.house.photos;
   }
 
   setPhoto() {
-    this.currentPhoto = this.photosUrls[this.index];
+    this.currentPhoto = this.photosUrls[this.index].url;
   }
 
   next() {
@@ -44,7 +42,6 @@ export class HouseDetailComponent implements OnInit {
     if(this.index > 0) {
       this.index--;
     }
-
     this.setPhoto();
   }
 
@@ -52,8 +49,33 @@ export class HouseDetailComponent implements OnInit {
     this.userService.deleteHouse(id, this.authService.decodedToken.nameid).subscribe((response: Response) => {
       this.router.navigate(['/houses']);
     }, error => {
-      console.log(error);
+      alert(error);
     });
+  }
+
+  deletePhoto(id) {
+    if(confirm('Delete?')) {
+      this.userService.deletePhoto(this.house.id, id).subscribe(() => {
+        location.reload();
+      }, error => {
+        alert(error);
+      });
+    } 
+  }
+
+  setMain(id) {
+    if(confirm('Set Main Photo?')) {
+      return this.userService.setMainPhoto(this.house.id, id).subscribe((response: Response) => {
+        // location.reload();
+        alert(response);
+      }, error => {
+        alert(error);
+      });
+    }
+  }
+
+  loggedIn() {
+    return this.authService.loggedIn();
   }
 
 }

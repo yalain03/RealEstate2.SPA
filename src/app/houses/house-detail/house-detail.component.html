@@ -20,8 +20,14 @@
     </a>
   </div>
   <div class="house-detail__info">
+      <button [disabled]="photosUrls[index].isMain" class="delete" 
+        *ngIf="loggedIn()"
+        (click)="deletePhoto(photosUrls[index].id)"><i class="far fa-trash-alt"></i></button>
       <button (click)="previous()"><i class="fas fa-chevron-left"></i></button>
       <span>{{(index+1)}} / {{photosUrls.length}}</span>
       <button (click)="next()"><i class="fas fa-chevron-right"></i></button>
+      <button [disabled]="photosUrls[index].isMain" class="main" 
+        *ngIf="loggedIn()"
+        (click)="setMain(photosUrls[index].id)"><i class="fas fa-map-pin"></i></button>
   </div>
 </div>

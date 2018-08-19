@@ -129,4 +129,12 @@ getUser(id: number) {
 updateUser(model: User) {
   return this.http.put(this.baseUrl + 'users/' + model.id, model);
 }
+
+deletePhoto(houseId: number, id: number) {
+  return this.http.delete(this.baseUrl + 'houses/' + houseId + '/photos/' + id);
+}
+
+setMainPhoto(houseId, id) {
+  return this.http.put(this.baseUrl + 'houses/' + id + '/photos/' + id + '/main', {});
+}
 }

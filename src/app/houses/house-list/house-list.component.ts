@@ -60,7 +60,9 @@ export class HouseListComponent implements OnInit {
 
   loadHouses() {
     this.progressService.getProgress().start();
-    this.userService.getHouses(this.pagination.currentPage, this.pagination.itemsPerPage, this.houseParams)
+    if(this.loggedIn()) {
+      this.userService.getHousesForUser(this.authService.decodedToken.nameid, this.pagination.currentPage,
+        this.pagination.itemsPerPage, this.houseParams)
       .subscribe((res: PaginatedResult<House[]>) => {
         // console.log(res);
         this.houses = res.result;
@@ -69,6 +71,17 @@ export class HouseListComponent implements OnInit {
       }, error => {
         console.log(error);
       });
+    } else {
+      this.userService.getHouses(this.pagination.currentPage, this.pagination.itemsPerPage, this.houseParams)
+      .subscribe((res: PaginatedResult<House[]>) => {
+        // console.log(res);
+        this.houses = res.result;
+        this.pagination = res.pagination;
+        this.progressService.getProgress().complete();
+      }, error => {
+        console.log(error);
+      });
+    }
   }
 
 }

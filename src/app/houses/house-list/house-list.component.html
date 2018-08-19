@@ -10,13 +10,13 @@
     </form>    
   </div>
   <div class="house-list__new" *ngIf="loggedIn()">
-    <a [routerLink]="['/house/create']" routerLinkActive="router-link-active" >+ House</a>
+    <a [routerLink]="['/house/create']" routerLinkActive="router-link-active" >+ <i class="fas fa-home"></i></a>
   </div>
   <div class="house-list__update-user" *ngIf="loggedIn()">
-    <a [routerLink]="['/users/edit/', getService().decodedToken.nameid]" routerLinkActive="router-link-active" >Update Profile Info</a>
+    <a [routerLink]="['/users/edit/', getService().decodedToken.nameid]" routerLinkActive="router-link-active" ><i class="far fa-user-circle"></i> Info</a>
   </div>
   <div class="house-list__user-photo" *ngIf="loggedIn()">
-    <a [routerLink]="['/users/photo/', getService().decodedToken.nameid]" routerLinkActive="router-link-active" >+ User Photo</a>
+    <a [routerLink]="['/users/photo/', getService().decodedToken.nameid]" routerLinkActive="router-link-active" >+ <i class="fas fa-camera-retro"></i></a>
   </div>
   <div class="house-list__items">
     <div *ngFor="let house of houses" class="house-list__item">

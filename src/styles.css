@@ -689,11 +689,21 @@ heading {
     .house-detail__info > span {
       margin-left: 2rem;
       margin-right: 2rem; }
+    .house-detail__info > .delete {
+      margin-right: 4rem; }
+      .house-detail__info > .delete:disabled {
+        cursor: not-allowed; }
+    .house-detail__info > .main {
+      margin-left: 4rem; }
+      .house-detail__info > .main:disabled {
+        cursor: not-allowed; }
     .house-detail__info > button {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.5);
       border: none; }
       .house-detail__info > button:hover {
         cursor: pointer; }
+      .house-detail__info > button:disabled {
+        background-color: rgba(255, 255, 255, 0.3); }
     .house-detail__info i {
       height: 100%;
       width: 100%;

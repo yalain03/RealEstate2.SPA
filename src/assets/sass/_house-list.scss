@@ -75,11 +75,13 @@
     &__item {
         display: grid;
         grid-row-gap: 3.5rem;
+        width: 25rem; // remove to get back to original form
         grid-template-columns: repeat(2, 1fr);
         background-color: lighten($color-house, 10%);
 
         &-img {
             width: 100%;
+            height: 15rem; // remove to get back to original form
             grid-column: 1 / -1;
             grid-row: 1 / 2;
             z-index: 1;

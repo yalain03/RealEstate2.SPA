@@ -3,6 +3,7 @@ import { AuthService } from '../_services/auth.service';
 import { Router } from '../../../node_modules/@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { User } from '../_models/user';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,8 @@ import { User } from '../_models/user';
 })
 export class RegisterComponent implements OnInit {
   user: User;
-  baseUrl = 'http://localhost:5000/api/auth/';
+  // baseUrl = 'http://localhost:5000/api/auth/';
+  baseUrl = environment.apiUrl + 'auth';
   registerForm: FormGroup;
 
   constructor(private authService: AuthService, private router: Router, private fb: FormBuilder) { }

@@ -539,7 +539,7 @@ heading {
     background-color: #ffad33; }
     .house-list__item-img {
       width: 100%;
-      height: 15rem;
+      height: 18rem;
       grid-column: 1 / -1;
       grid-row: 1 / 2;
       z-index: 1; }

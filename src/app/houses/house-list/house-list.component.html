@@ -1,9 +1,9 @@
 <div class="house-list">
   <div class="house-list__search">
     <form #searchForm="ngForm" (ngSubmit)="loadHouses()" class="house-list__search-form" >
-      <input type="text" class="house-list__search-box" name="rooms" [(ngModel)]="houseParams.rooms" placeholder="minimum rooms" />
-      <input type="text" class="house-list__search-box" name="price" [(ngModel)]="houseParams.price" placeholder="maximum price" />
-      <input type="text" class="house-list__search-box" name="area" [(ngModel)]="houseParams.area" placeholder="minimum area" />
+      <input type="text" class="house-list__search-box" name="rooms" [(ngModel)]="houseParams.rooms" placeholder="minimum rooms e.g. 4" />
+      <input type="text" class="house-list__search-box" name="price" [(ngModel)]="houseParams.price" placeholder="maximum price e.g. 110000" />
+      <input type="text" class="house-list__search-box" name="area" [(ngModel)]="houseParams.area" placeholder="minimum area e.g. 45" />
       <input type="text" class="house-list__search-box" name="city" [(ngModel)]="houseParams.city" placeholder="city" />
       <input type="text" class="house-list__search-box" name="state" [(ngModel)]="houseParams.state" placeholder="state ex: CA" />
       <select name="available" id="available" *ngIf="loggedIn()" 
@@ -28,7 +28,7 @@
 
   
   <div class="house-list__items">
-    <p *ngIf="houses.length === 0" class="sorry"><i class="far fa-frown"></i> Sorry, nothing corresponding to these criteria!</p>
+    <p *ngIf="houses.length === 0" class="sorry"><i class="far fa-frown"></i> Sorry, no house to display!</p>
     <div *ngFor="let house of houses" class="house-list__item">
       <img src="{{house.photoUrl}}" alt="House Photo" class="house-list__item-img">
       <a [routerLink]="['/house/detail/', house.id]" class="house-list__item-link" >View House</a>

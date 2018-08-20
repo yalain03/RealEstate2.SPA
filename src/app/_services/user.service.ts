@@ -74,6 +74,9 @@ getHousesForUser(id, page?, itemsPerPage?, houseParams?): Observable<PaginatedRe
     params = params.append('state', state);
     const rooms = (houseParams.rooms) != null ? houseParams.rooms : -1;
     params = params.append('rooms', rooms);
+    if(houseParams.available == null) {
+      houseParams.available = '';
+    }
     params = params.append('available', houseParams.available);
     let price = houseParams.price;
     if(price == null || price === '') {

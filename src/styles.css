@@ -528,6 +528,9 @@ heading {
     grid-column: 3 / 11;
     grid-row: 3 / 4;
     margin-top: 4rem; }
+    .house-list__items > .sorry {
+      font-size: 1.7rem;
+      color: #5C7AB7; }
   .house-list__item {
     display: grid;
     grid-row-gap: 3.5rem;

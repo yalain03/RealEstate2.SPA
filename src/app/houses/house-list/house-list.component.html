@@ -28,6 +28,7 @@
 
   
   <div class="house-list__items">
+    <p *ngIf="houses.length === 0" class="sorry"><i class="far fa-frown"></i> Sorry, nothing corresponding to these criteria!</p>
     <div *ngFor="let house of houses" class="house-list__item">
       <img src="{{house.photoUrl}}" alt="House Photo" class="house-list__item-img">
       <a [routerLink]="['/house/detail/', house.id]" class="house-list__item-link" >View House</a>

@@ -597,6 +597,10 @@ heading {
     grid-column: 2 / 12;
     grid-row: 1 / 2;
     margin-top: 2rem; }
+    .house-list__search input[type=number]::-webkit-inner-spin-button,
+    .house-list__search input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .house-list__search-form {
       display: flex;
       flex-direction: row;

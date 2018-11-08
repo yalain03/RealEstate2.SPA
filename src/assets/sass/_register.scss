@@ -7,11 +7,15 @@
     grid-template-rows: 100%;
     grid-template-columns: repeat(12, 1fr);
 
+    &__img {
+        grid-column: 6 / 13;
+        grid-row: 1 / 2;
+    }
+
     &-body {
         min-width: 100%;
         min-height: 100%;
-        grid-column: 4 / 10;
-        margin-top: 5rem;
+        grid-column: 1 / 6;
     }
 
     &-form {
@@ -24,7 +28,7 @@
             font-weight: 700px;
         }
 
-        & input, select {
+        & input[type=text], input[type=password], input[type=date], input[type=email], select {
             padding: 0.7rem;
             background-color: $color-light;
             font-family: Nunito;
@@ -63,7 +67,7 @@
 
             &:disabled {
                 cursor: none;
-                background-color: lighten($color-primary, 50%);
+                background-color: lighten($color-primary, 15%);
                 color: #ccc;
             }
         }
@@ -77,4 +81,8 @@
             visibility: hidden;
         }
     }
+}
+
+.submition {
+    border: none;
 }

@@ -22,7 +22,7 @@
                     left: 0;
                     top: 0;
                     transform: translateX(-70%) translateY(-60%);
-                    background-color: $color-house;
+                    background-color: $color-dots;
                     color: $color-light;
                     padding: 1rem;
                 }
@@ -100,7 +100,7 @@
                     transform: translateX(340%) translateY(40%);
                     font-size: 1rem;
                     font-family: $font-primary;
-                    background-color: $color-house;
+                    background-color: $color-dots;
                     color: $color-light;
                     padding: 1rem;
                 }
@@ -172,7 +172,7 @@
                 height: 2rem;
                 width: 2rem;
                 border-radius: 50%;
-                background-color: $color-house;
+                background-color: $color-dots;
                 // opacity: 0;
                 // transition: opacity .2s;
             }   
@@ -183,7 +183,7 @@
                 height: 3.2rem;
                 width: 3.2rem;
                 border-radius: 5rem;
-                background-color: $color-house;
+                background-color: $color-dots;
                 transform: translateX(-50%);
             }
         }
@@ -223,7 +223,7 @@
                 height: 2rem;
                 width: 2rem;
                 border-radius: 50%;
-                background-color: $color-house;
+                background-color: $color-dots;
                 // opacity: 0;
                 transition: opacity .2s;
             }   
@@ -234,7 +234,7 @@
                 height: 3.2rem;
                 width: 3.2rem;
                 border-radius: 5rem;
-                background-color: $color-house;
+                background-color: $color-dots;
                 transform: translateX(-50%);
             }
         }
@@ -274,7 +274,7 @@
                 height: 2rem;
                 width: 2rem;
                 border-radius: 50%;
-                background-color: $color-house;
+                background-color: $color-dots;
                 // opacity: 0;
                 transition: opacity .2s;
             }   
@@ -285,7 +285,7 @@
                 height: 3.2rem;
                 width: 3.2rem;
                 border-radius: 5rem;
-                background-color: $color-house;
+                background-color: $color-dots;
                 transform: translateX(-50%);
             }
         }

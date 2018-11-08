@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   // baseUrl = 'http://localhost:5000/api/auth/';
   baseUrl = environment.apiUrl + 'auth';
   registerForm: FormGroup;
+  isLoading = false;
 
   constructor(private authService: AuthService, private router: Router, private fb: FormBuilder) { }
 
@@ -41,11 +42,13 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    if(this.registerForm.valid) {
+    this.isLoading = true;
+    if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
       this.authService.register(this.user).subscribe(() => {
         this.router.navigate(['/login']);
       }, error => {
+        this.isLoading = false;
         alert(error);
       });
     }

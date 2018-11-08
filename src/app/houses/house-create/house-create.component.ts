@@ -11,6 +11,7 @@ import { House } from '../../_models/house';
 })
 export class HouseCreateComponent implements OnInit {
   model: any = {};
+  isLoading = false;
 
   constructor(private userService: UserService, private authService: AuthService,
     private router: Router) { }
@@ -27,10 +28,12 @@ export class HouseCreateComponent implements OnInit {
   }
 
   createHouse() {
+    this.isLoading = true;
     this.model.userId = this.authService.decodedToken.nameid;
     this.userService.createHouse(this.authService.decodedToken.nameid, this.model).subscribe((house: House) => {
       this.router.navigate(['/house/photo/', house.id]);
     }, error => {
+      this.isLoading = false;
       console.log(error);
     });
   }

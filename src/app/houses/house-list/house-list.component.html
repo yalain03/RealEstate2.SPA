@@ -16,7 +16,7 @@
   </div>
 
 
-  <div class="house-list__new" *ngIf="loggedIn()">
+  <div class="house-list__new" *ngIf="loggedIn() && !isLoading">
     <a [routerLink]="['/house/create']" routerLinkActive="router-link-active" >+ <i class="fas fa-home"></i></a>
   </div>
   <div class="house-list__update-user" *ngIf="loggedIn()">
@@ -27,7 +27,7 @@
   </div>
 
   
-  <div class="house-list__items">
+  <div class="house-list__items" *ngIf="!isLoading">
     <p *ngIf="houses.length === 0" class="sorry"><i class="far fa-frown"></i> Sorry, no house to display!</p>
     <div *ngFor="let house of houses" class="house-list__item">
       <img src="{{house.photoUrl}}" alt="House Photo" class="house-list__item-img">
@@ -56,12 +56,15 @@
     </div>
   </div>
 
-  <div *ngIf="houses.length > 0" class="house-list__pagination">
+  <div *ngIf="houses.length > 0 && !isLoading" class="house-list__pagination">
     <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems"
                 [itemsPerPage]="pagination.itemsPerPage"
                 [(ngModel)]="pagination.currentPage "
                 (pageChanged)="pageChanged($event)"
                 previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
       </pagination>
+  </div>
+  <div class="loading" *ngIf="isLoading">
+    <div class="lds-ripple"><div></div><div></div></div>
   </div>
 </div>

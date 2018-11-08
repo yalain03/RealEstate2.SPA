@@ -11,6 +11,7 @@ import { AuthService } from '../../_services/auth.service';
 })
 export class HouseEditComponent implements OnInit {
   house: House;
+  isLoading = false;
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private router: Router, private authService: AuthService) { }
@@ -30,10 +31,12 @@ export class HouseEditComponent implements OnInit {
   }
 
   updateHouse() {
+    this.isLoading = true;
     this.house.userId = this.authService.decodedToken.nameid;
     this.userService.updateHouse(this.house).subscribe((response: Response) => {
       this.router.navigate(['/house/photo/', this.house.id]);
     }, error => {
+      this.isLoading = false;
       console.log(error);
     });
   }

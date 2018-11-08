@@ -1,6 +1,6 @@
 <div class="house-photo">
 
-    <div class="house-photo__form">
+    <div class="house-photo__form" *ngIf="!isLoading">
             <div class="col-md-3">
 
                     <!-- <h3>Select files</h3> -->
@@ -82,11 +82,11 @@
                             </div>
                         </div>
                         <button type="button" class="house-photo__button-upload"
-                                (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                                (click)="isLoading = true; uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
                             <i class="fas fa-cloud-upload-alt"></i> Upload all
                         </button>
                         <button type="button" class="house-photo__button-cancel"
-                                (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                                (click)="uploader.cancelAll(); isLoading = false;" [disabled]="!uploader.isUploading">
                                 <i class="fas fa-ban"></i> Cancel all
                         </button>
                         <!-- <button type="button" class="btn btn-danger btn-s"
@@ -97,5 +97,13 @@
               
                 </div>
     </div> 
+
+    <!-- <div class="house-photo__img" *ngIf="!isLoading">
+        <img src="./assets/images/house.jpg" />
+      </div> -->
+
+    <div class="loading" *ngIf="isLoading">
+        <div class="lds-ripple"><div></div><div></div></div>
+      </div>
 
 </div>

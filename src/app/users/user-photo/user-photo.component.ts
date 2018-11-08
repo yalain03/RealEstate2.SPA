@@ -15,6 +15,7 @@ export class UserPhotoComponent implements OnInit {
   public hasBaseDropZoneOver = false;
   public hasAnotherDropZoneOver = false;
   baseUrl = environment.apiUrl;
+  isLoading = false;
 
   constructor(private router: Router, private userService: UserService,
     private activatedRoute: ActivatedRoute) { }

@@ -17,6 +17,7 @@ export class HouseListComponent implements OnInit {
   houseParams: any = {};
   pagination: Pagination;
   availabilities = [{value: 'yes', display: 'Available'}, {value: 'no', display: 'Not Available'}];
+  isLoading = false;
 
   constructor(private userService: UserService, private route: ActivatedRoute,
     private authService: AuthService, private progressService: ProgressService) { }
@@ -52,8 +53,10 @@ export class HouseListComponent implements OnInit {
   }
 
   loadHouses() {
-    this.progressService.getProgress().start();
-    if(this.loggedIn()) {
+    // console.log('loading houses');
+    this.isLoading = true;
+    // this.progressService.getProgress().start();
+    if (this.loggedIn()) {
       this.userService.getHousesForUser(this.authService.decodedToken.nameid, this.pagination.currentPage,
         this.pagination.itemsPerPage, this.houseParams)
       .subscribe((res: PaginatedResult<House[]>) => {
@@ -61,6 +64,7 @@ export class HouseListComponent implements OnInit {
         this.pagination = res.pagination;
         this.progressService.getProgress().complete();
       }, error => {
+        this.isLoading = false;
         console.log(error);
       });
     } else {
@@ -70,9 +74,11 @@ export class HouseListComponent implements OnInit {
         this.pagination = res.pagination;
         this.progressService.getProgress().complete();
       }, error => {
+        this.isLoading = false;
         console.log(error);
       });
     }
+    this.isLoading = false;
   }
 
 }

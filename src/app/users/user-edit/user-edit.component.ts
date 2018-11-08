@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserEditComponent implements OnInit {
   user: User;
   confirm: string;
+  isLoading = false;
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private router: Router, private authService: AuthService) { }
@@ -23,13 +24,13 @@ export class UserEditComponent implements OnInit {
   }
 
   updateUser() {
-    if(this.user.password != null && this.user.password === this.confirm) {
+    this.isLoading = true;
       this.userService.updateUser(this.user).subscribe((response: Response) => {
         this.router.navigate(['houses']);
       }, error => {
+        this.isLoading = false;
         console.log(error);
       });
-    }
   }
 
 }

@@ -1,5 +1,5 @@
 <div class="house-create">
-    <form #houseForm="ngForm" (ngSubmit)="createHouse()" class="house-create__form" >
+    <form #houseForm="ngForm" (ngSubmit)="createHouse()" class="house-create__form" *ngIf="!isLoading" >
       <div class="house-create__top">
           <div class="house-create__input-2">
               <label for="price">Price: </label> <br>
@@ -58,6 +58,14 @@
         
         <input type="submit" class="house-create__submit" value="Create" >
       </form>
+
+      <div class="house-create__img" *ngIf="!isLoading">
+        <img src="./assets/images/house.jpg" />
+      </div>
+
+      <div class="loading" *ngIf="isLoading">
+        <div class="lds-ripple"><div></div><div></div></div>
+      </div>
 </div>
 
 

@@ -265,11 +265,14 @@ heading {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  grid-template-rows: 100%;
+  grid-template-rows: 100vh;
   grid-template-columns: repeat(12, 1fr); }
   .register__img {
     grid-column: 6 / 13;
-    grid-row: 1 / 2; }
+    grid-row: 1 / -1; }
+    .register__img > img {
+      width: 100%;
+      height: 100%; }
   .register-body {
     min-width: 100%;
     min-height: 100%;
@@ -317,7 +320,7 @@ heading {
 .login {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 15rem 1fr; }
+  grid-template-rows: 15rem 66.5vh; }
   .login__img {
     grid-column: 5 / 13;
     grid-row: 1 / -1;
@@ -369,9 +372,16 @@ heading {
 .house-create {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr; }
+  grid-template-rows: 89.5vh;
+  align-items: stretch; }
+  .house-create__img {
+    grid-column: 6 / -1;
+    grid-row: 1 / -1; }
+    .house-create__img > img {
+      width: 100%;
+      height: 100%; }
   .house-create__form {
-    grid-column: 5 / 8;
+    grid-column: 2 / 5;
     margin-top: 2rem; }
     .house-create__form label {
       font-size: 1.3rem;
@@ -753,6 +763,72 @@ heading {
   .house-detail ::-webkit-scrollbar-thumb:hover {
     background: #171e2e; }
 
+.user-photo {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 89.5vh;
+  align-items: stretch; }
+  .user-photo__img {
+    grid-column: 6 / -1; }
+    .user-photo__img > img {
+      width: 100%;
+      height: 100%; }
+  .user-photo__form {
+    margin-top: 2rem;
+    grid-column: 2 / 5; }
+  .user-photo__files {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1; }
+  .user-photo__label {
+    margin-bottom: 2rem; }
+  .user-photo__files + label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #304061;
+    display: inline-block;
+    padding: 1.5rem; }
+  .user-photo__files:focus + label,
+  .user-photo__files + label:hover {
+    background-color: #526da5;
+    cursor: pointer; }
+  .user-photo__button-upload {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    background-color: #139650;
+    border: none;
+    margin-right: 2rem; }
+    .user-photo__button-upload:hover {
+      cursor: pointer;
+      background-color: #2be481; }
+  .user-photo__button-cancel {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    background-color: #ed6a5a;
+    border: none; }
+    .user-photo__button-cancel:hover {
+      cursor: pointer;
+      background-color: #f7bdb6; }
+  .user-photo__button-remove {
+    color: #fff;
+    display: inline-block;
+    padding: 1.05rem;
+    background-color: #ed6a5a;
+    border: none; }
+    .user-photo__button-remove:hover {
+      cursor: pointer;
+      background-color: #f7bdb6; }
+
 .loader,
 .loader:after {
   border-radius: 50%;
@@ -797,7 +873,7 @@ heading {
 
 .lds-ripple div {
   position: absolute;
-  border: 4px solid #ccc;
+  border: 4px solid #304061;
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
@@ -818,3 +894,8 @@ heading {
     width: 58px;
     height: 58px;
     opacity: 0; } }
+
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 30%; }

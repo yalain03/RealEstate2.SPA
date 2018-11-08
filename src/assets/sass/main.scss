@@ -46,6 +46,7 @@ heading {
 @import './house-photo';
 @import './house-list';
 @import './house-detail';
+@import './user-photo';
 
 .loader,
 .loader:after {
@@ -97,7 +98,7 @@ heading {
   }
   .lds-ripple div {
     position: absolute;
-    border: 4px solid #ccc;
+    border: 4px solid $color-primary;
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -121,4 +122,13 @@ heading {
       opacity: 0;
     }
   }
+
+.loading {
+  // margin-top: 0%;
+  // margin-left: 100%;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  // transform: translateX(100%), translate(50%);
+}
   

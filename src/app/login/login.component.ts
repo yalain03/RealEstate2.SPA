@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
+  isLoading = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -17,8 +18,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
     this.authService.login(this.model).subscribe(next => {
     }, error => {
+      this.isLoading = false;
       alert(error);
     }, () => {
       this.router.navigate(['/houses']);

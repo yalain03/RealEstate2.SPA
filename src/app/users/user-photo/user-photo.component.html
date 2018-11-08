@@ -1,6 +1,6 @@
-<div class="house-photo">
+<div class="user-photo">
 
-        <div class="house-photo__form">
+        <div class="user-photo__form" *ngIf="!isLoading">
                 <div class="col-md-3">
     
                         <!-- <h3>Select files</h3> -->
@@ -22,8 +22,8 @@
                         </div> -->
                   
                         <!-- Select Photos -->
-                        <input type="file" ng2FileSelect [uploader]="uploader" class="house-photo__files" id="file"  />
-                        <label for="file" class="house-photo__label"><i class="far fa-file-image"></i> Select File</label>
+                        <input type="file" ng2FileSelect [uploader]="uploader" class="user-photo__files" id="file"  />
+                        <label for="file" class="user-photo__label"><i class="far fa-file-image"></i> Select File</label>
                         <br/>
                     </div>
                   
@@ -65,7 +65,7 @@
                                             (click)="item.cancel()" [disabled]="!item.isUploading">
                                         <span class="glyphicon glyphicon-ban-circle"></span> Cancel
                                     </button> -->
-                                    <button type="button" class="house-photo__button-remove"
+                                    <button type="button" class="user-photo__button-remove"
                                             (click)="item.remove()">
                                         <span class="glyphicon glyphicon-trash"></span> Remove
                                     </button>
@@ -81,13 +81,13 @@
                                     <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
                                 </div>
                             </div>
-                            <button type="button" class="house-photo__button-upload"
-                                    (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-                                <i class="fas fa-cloud-upload-alt"></i> Upload all
+                            <button type="button" class="user-photo__button-upload"
+                                    (click)="isLoading = true; uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                                <i class="fas fa-cloud-upload-alt"></i> Upload
                             </button>
-                            <button type="button" class="house-photo__button-cancel"
-                                    (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
-                                    <i class="fas fa-ban"></i> Cancel all
+                            <button type="button" class="user-photo__button-cancel"
+                                    (click)="isLoading = false; uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                                    <i class="fas fa-ban"></i> Cancel
                             </button>
                             <!-- <button type="button" class="btn btn-danger btn-s"
                                     (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
@@ -97,6 +97,14 @@
                   
                     </div>
         </div> 
+
+        <div class="user-photo__img" *ngIf="!isLoading">
+            <img src="./assets/images/house.jpg" />
+          </div>
+
+        <div class="loading" *ngIf="isLoading">
+            <div class="lds-ripple"><div></div><div></div></div>
+          </div>
     
     </div>
     

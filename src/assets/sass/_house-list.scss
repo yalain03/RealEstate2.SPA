@@ -137,7 +137,7 @@
 
         &-edit {
             grid-column: 1 / 2;
-            background-color: $color-edit;
+            background-color: lighten($color-primary, 30%);
             color: $color-light;
             font-family: $font-secondary;
             font-size: 1.5rem;
@@ -147,7 +147,7 @@
             padding: 1.5rem;
 
             &:hover {
-                background-color: lighten($color-edit, 10%);
+                background-color: lighten($color-primary, 40%);
             }
         }
 

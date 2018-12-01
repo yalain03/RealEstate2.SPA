@@ -1,6 +1,7 @@
 .home {
     display: grid;
-    grid-template-columns: repeat(10, minmax(min-content, 1fr));
+    grid-template-columns: repeat(10, minmax(12rem, 1fr));
+    // grid-auto-columns: minmax(10%, 1fr);
 
     &__overview {
         // grid-column: 3 / 9;

@@ -59,7 +59,7 @@ heading {
 
 .home {
   display: grid;
-  grid-template-columns: repeat(10, minmax(min-content, 1fr)); }
+  grid-template-columns: repeat(10, minmax(12rem, 1fr)); }
   .home__overview-left {
     grid-column: 3 / 6; }
     .home__overview-left > .button {
@@ -607,7 +607,7 @@ heading {
         font-size: 2rem; }
     .house-list__item-edit {
       grid-column: 1 / 2;
-      background-color: #CDDC39;
+      background-color: #7189b9;
       color: #fff;
       font-family: Josefin Sans;
       font-size: 1.5rem;
@@ -616,7 +616,7 @@ heading {
       vertical-align: middle;
       padding: 1.5rem; }
       .house-list__item-edit:hover {
-        background-color: #d8e464; }
+        background-color: #93a5ca; }
     .house-list__item-delete {
       grid-column: 2 / 3;
       background-color: #F44336;

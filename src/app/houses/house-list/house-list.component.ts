@@ -45,7 +45,8 @@ export class HouseListComponent implements OnInit {
   deleteHouse(id: number) {
     if(confirm('Are you sure you want to delete?')) {
       this.userService.deleteHouse(id, this.authService.decodedToken.nameid).subscribe(() => {
-        location.reload();
+        this.houses = this.houses.filter(house => house.id !== id);
+        // location.reload();
       }, error => {
         console.log(error);
       });
